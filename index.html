@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="si-SL">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="Img/favicon.ico" type="image/x-icon">
+
+    <title>Prijava dijaka na šolsko prehrano</title>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li class="alignNav"><img src="img/SCNG-Color.svg" alt="Image"></li>
+            <li id="centerNav">Prijava na šolsko prehrano</li>
+            <li class="alignNav"></li>
+        </ul>
+    </nav>
+    <div class="main">
+        <form action="" method="post" class="mainForm">
+            <div id="first">
+                <div id="imeinsed">
+                    <label for="IISin">Ime in sedež</label>
+                    <input type="text" id="IISin" required
+                        placeholder="Elektrotehniška in računalniška šola, Cankarjeva 10, 5000 Nova Gorica">
+                </div>
+                <div id="dataVlag">
+                    <div id="dataText">
+                        PODATKI O VLAGATELJU
+                    </div>
+                    <div id="dataRadio">
+                        <input type="radio" name="rad" id="M">
+                        <label for="M">Mati</label>
+                        <input type="radio" name="rad" id="O">
+                        <label for="O">Oce</label>
+                        <input type="radio" name="rad" id="D">
+                        <label for="D">Druga oseba</label>
+                    </div>
+                </div>
+                <div class="textareas">
+                    <div class="t1">
+                        <textarea name="" id=""></textarea>
+                    </div>
+                    <div class="t2">
+                        <textarea name="" id=""></textarea>
+                    </div>
+                </div>
+                <div id="dataDij">
+                    PODATKI O DIJAKU
+                </div>
+                <div class="textareas">
+                    <div class="t1">
+                        <textarea name="" id=""></textarea>
+                    </div>
+                    <div class="t2">
+                        <textarea name="" id=""></textarea>
+                    </div>
+                </div>
+                <div id="data3">
+                    <div id="emso">
+                        <label for="emsoin">EMSO</label>
+                        <input type="text" name="" id="emsoin" placeholder="2402006500135">
+                    </div>
+                    <div id="letnik">
+                        <label for="">Letnik in oddelek</label>
+                        <input type="text" name="" id="" placeholder="XLT">
+                    </div>
+                </div>
+            </div>
+            <div id="second">
+                <div id="prijava">PRIJAVA</div>
+                <div id="secondTxt">Spodaj podpisani vlagatelj prijavljam imenovanega dijaka na šolsko malico v šolskem
+                    letu 2024 - 2025 od <input type="date" name="" id=""> dalje</div>
+            </div>
+            <div id="third">
+                <div id="thHead">
+                    Izjavljam da sem seznanjen:
+                </div>
+                <div id="thList">
+                    <ul>
+                        <li>z organizacijo šolske prehrane na šoli in s pravili šolske prehrane,</li>
+                        <li>z določbo 9. člena Zakona o šolski prehrani, ki določa, da moram spoštovati pravila šolske
+                            prehrane, plačati prispevek za šolsko prehrano, pravočasno odjaviti posamezen obrok, plačati
+                            polno ceno obroka, če obrok ne bo pravočasno odjavljen ter šoli v 30 dneh sporočiti vsako
+                            spremembo podatkov, navedenih v prijavi;</li>
+                        <li id="imporatante"> da moram malico za naslednji šolski dan odjaviti preko spletne aplikacije
+                            <a href="https://malica.scng.si" target="_blank">mojamalica.scng.si</a> do 13.00 , v
+                            izrednih primerih (bolezen) pa lahko malico za tekoči dan odjavite do 8.00 ure, po e-pošti:
+                            <a href="#" onclick="openMailClient()">malica@scng.si</a>
+                        </li>
+                        <li>s pravico do subvencioniranja šolske prehrane ter načinom in postopkom uveljavljanja
+                            subvencije</li>
+                    </ul>
+                </div>
+                <div id="izjava">
+                    Izjavljam tudi, da so vsi podatki, ki sem jih navedel v vlogi resnični, točni in popolni ter v tem
+                    pogledu prevzemam kazensko in materialno odgovornost.
+                </div>
+                <div id="sepparator">
+                    <div id="box1">
+                        <label for="izpolnitevDate">Datum</label>
+                        <input type="date" name="" id="izpolnitevDate">
+                    </div>
+                    <div id="box2">
+                        <div>Podpis vlagatelja</div>
+                        <canvas width="300" height="100" class="signatureField"></canvas>
+                        <span class="delete">Izbis</span>
+                    </div>
+                </div>
+            </div>
+            <div id="fourth">
+                <div id="forhead">
+                    Navodila
+                </div>
+                <div id="foText">
+                    <ol>
+                        <li>V rubriko »PODATKI O VLAGATELJU« vlagatelj vpiše svoje ime in priimek ter naslov (ulica,
+                            hišna številka, kraj, poštna številka). Če je vlagatelj pravna oseba (npr: zavod za vzgojo
+                            in izobraževanje otrok in mladostnikov s posebnimi potrebami, dom za učence, azilni dom, …)
+                            se vpiše ime in sedež zavoda, obrazec pa v imenu vlagatelja podpiše odgovorna oseba in ga
+                            opremi s žigom.</li>
+                        <li>
+                            V rubriko »PODATKI O DIJAKU« vlagatelj vpiše ime in priimek dijaka, naslov, EMŠO, letnik in
+                            oddelek, ter obkroži izobraževalni program.
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div id="fifth">
+                <input type="submit" value="Oddaj prijavo!" id="endMyMisseryPls">
+            </div>
+        </form>
+    </div>
+    <script src="scripts/mail.js"></script>
+    <script src="scripts/signature.js"></script>
+</body>
+
+</html>

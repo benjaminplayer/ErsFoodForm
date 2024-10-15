@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --paddingLeft: .3rem;
+    --linkUnderlineTrnasition: width .2s;
+    --defBorder: 2px solid;
+    --defWhite : #ffffff;
+    --outlineMain: .5px lightgray solid;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    background: url(../Img/empty_pattern.png) repeat;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+}
+
+nav{
+    width: 100%;
+    height: 60px;
+    background: var(--defWhite);
+    border-bottom: var(--outlineMain);
+}
+
+nav ul{
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+nav img{
+    width: 160px;
+}
+
+
+.alignNav{
+    width: 25%;
+    flex-shrink: 2;
+}
+
+#centerNav{
+    width: 50%;
+    text-align: center;
+    line-height: 60px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.main{
+    background:  var(--defWhite);
+    border:var(--outlineMain);
+    min-height: max-content;
+    margin-top: .5rem;
+    width: 44rem;
+    margin: 0 auto;
+    
+}
+
+.main form{
+    background: var(--defWhite);
+    display: flex;
+    margin: .5rem auto;
+    flex-direction: column;
+    row-gap: 1rem;
+    height: 100%;
+    width: 40rem;
+}
+
+
+#first{
+    border: 2px solid;
+    min-height: 24rem;
+}
+
+#imeinsed{
+    width: 100%;
+    height: 4rem;
+}
+
+#imeinsed label{
+    display: block;
+}
+
+#imeinsed input[type="text"]{
+    width: 38rem;
+    margin: 0 1rem;
+}
+
+#dataVlag{
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid;
+    width: 100%;
+    height: 2rem;
+}
+
+#dataText{
+    width: 50%;
+    border-right: 2px solid;
+    font-weight: bold;
+}
+
+#dataRadio{
+    width: 50%;
+}
+
+.textareas{
+    display: flex;
+    height: 6rem;
+    border-bottom: 2px solid;
+}
+
+.textareas textarea{
+    width: 98.8%;
+    height: 96%;
+    resize: none;
+}
+
+.t1{
+    width: 50%;
+    background: red;
+    border-right: 2px solid;
+}
+
+.t2{
+    width: 50%;
+    background: greenyellow;
+}
+
+#dataDij{
+    width: 100%;
+    height: 2rem;
+    line-height: 2rem;
+    border-bottom: 2px solid;
+}
+
+#data3{
+    display: flex;
+    width: 50%;
+    height: 4rem;
+    background: yellowgreen;
+    border-right: 2px solid;
+}
+
+#emso{
+    width: 50%;
+}
+
+#emso label{
+    display: block;
+    height: 2rem;
+    line-height: 2rem;
+}
+
+#emso input[type="text"]{
+    position: relative;
+    width: 6.1rem;
+    height: 2em;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#letnik{
+    width: 50%;
+    height: 100%;
+    border-left: 2px solid;
+}
+
+#letnik label{
+    display: block;
+    height: 2rem;
+    line-height: 2rem;
+}
+
+#letnik input[type="text"]{
+    position: relative;
+    font-size: 1.5rem;
+    width: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#second{
+    min-height: 6rem;
+    border: 2px solid;
+}
+
+#prijava{
+    height: 2rem;
+    border-bottom: 2px solid;
+    line-height: 2rem;
+    font-weight: bold;
+    padding-left: var(--paddingLeft);
+}
+
+#secondTxt{
+    height: 4rem;
+    padding-left: var(--paddingLeft);
+}
+
+#third{
+    border: 2px solid;
+    min-height: 31rem;
+}
+
+#thHead{
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.5rem;
+    height: 2em;
+    line-height: 2em;
+    border-bottom: 2px solid;
+    padding: 0 var(--paddingLeft);
+}
+
+#thList{
+    margin-top: 1rem;
+}
+
+#thList ul{
+    list-style: inside "- ";
+    padding-left: var(--paddingLeft);
+}
+
+#imporatante{
+    color: red;
+}
+
+#thList ul li a{
+    position: relative;
+    color:red;
+    text-decoration: none;
+}
+
+#thList ul li a::after{
+    content: '';
+    position: absolute;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    background: rgb(85, 26, 139);
+    transition: var(--linkUnderlineTrnasition);
+}
+
+#thList ul li a:hover{
+    color: rgb(85, 26, 139);
+}
+
+#thList ul li a:hover:after{
+    width: 100%;
+}
+
+#izjava{
+    margin-top: 1rem;
+    padding: 0 var(--paddingLeft);
+    height: 3rem;
+}
+
+#sepparator{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 1fr 1fr -> 2 enaka stolpca*/
+    height: 10rem;
+    background: lightcoral;
+}
+
+#box1{
+    line-height: 10rem;
+}
+
+#box2 canvas{
+    display: block;
+    background: lightgreen;
+    width: 18em;
+    height: 6em;
+    border-radius: 10px;
+}
+
+.delete{
+    text-decoration: none;
+}
+
+.delete:hover{
+    text-decoration: 1.5px underline;
+}
+
+#fourth{
+    min-height: 13rem;
+    border: var(--defBorder);
+    list-style: inside;
+}
+
+#forhead{
+    height: 2rem;
+    line-height: 2rem;
+    border-bottom: var(--defBorder);
+    font-weight: bold;
+    padding-left: var(--paddingLeft);
+}
+
+#foText{
+    padding: .5rem var(--paddingLeft) 0 var(--paddingLeft);
+}
+
+#foText ol li{
+    padding-bottom:.5rem;
+}
+
+#fifth{
+    /*border: var(--defBorder);*/
+    text-align: center;
+    height: 4rem;
+    line-height: 4rem;
+}
+
+#endMyMisseryPls{
+    position: relative;
+    font-family: "Noto Sans", sans-serif;
+    font-size: large;
+    width: 12rem;
+    height: 3rem;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    transition: ease .05s;
+}
+
+#endMyMisseryPls:hover{
+    border: 2px hsl(120, 90%, 46%) solid;
+    width: 12.6rem;
+    height: 3.6rem;
+    font-size: 1.2rem;
+    transition: ease .05s;
+}
+
+@media (min-width:867px){
+    #centerNav{
+        transition:ease 100ms;
+    }
+}
+
+@media (max-width: 867px){
+
+    #centerNav{
+        font-size: 1.5rem;
+        transition:ease 100ms;
+    }
+
+}
+
+@media (max-width: 655px){
+
+    nav{
+      height: 40px;
+    }
+
+    #centerNav{
+        font-size: 1rem;
+        line-height: 40px;
+        transition:ease 100ms;
+    }
+
+    nav img{
+        width: 120px;
+    }
+
+    .main{
+        background: lightblue;
+        min-height: max-content;
+        margin-top: .5rem;
+        width: 100%;
+    }
+    
+    .main form{
+        row-gap: 0rem;
+        height: 100%;
+        width: 20rem;
+    }
+
+    #first{
+        font-size: .6rem;
+        min-height: 20rem;
+        margin-bottom: 2rem ;
+    }
+
+    #imeinsed{
+        height: 2.5rem;
+    }
+
+    #imeinsed input[type="text"]{
+        width: 18rem;
+    }
+
+    #dataVlag{
+        height: 1rem;
+    }
+
+    #dataRadio input[type="radio"]{
+        height: .6rem;
+        width: .6rem;
+    }
+
+    .textareas textarea{
+        width: 97.4%;
+        height: 96%;
+        resize: none;
+    }
+
+    #emso input[type="text"]{
+        position: relative;
+        font-size: .6rem;
+        width: 4.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    #letnik label{
+        line-height: 2rem;
+    }
+
+    #letnik input[type="text"]{
+        position: relative;
+        font-size: 1rem;
+        width: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+}
+
+@media (max-width: 510px){
+    #centerNav{
+        font-size: .8rem;
+        transition:ease 100ms;
+    }
+}
