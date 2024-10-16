@@ -1,6 +1,6 @@
 function openMailClient() {
     // Simulate mailto behavior using JavaScript
-    const email = 'benjaminbiscak@gmail.com';
+    const email = 'xy@gmail.com';
     const subject = 'Odjava šolske malice';
     
     // Construct the mailto URL

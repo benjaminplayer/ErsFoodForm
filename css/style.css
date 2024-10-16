@@ -6,6 +6,7 @@
     --defBorder: 2px solid;
     --defWhite : #ffffff;
     --lightBorder: .5px lightgray solid;
+    --borderSmol: 1.5px solid;
 
 /* Color Theme Swatches in HSLA */
     --flamingOrange: hsl(11, 100%, 17%); 
@@ -293,7 +294,6 @@ nav img{
     padding-left: var(--paddingLeft);
 }
 
-
 #box1 input[type="date"]{
     width: 10rem;
     
@@ -467,7 +467,8 @@ nav img{
     }
 
     #imeinsed input[type="text"]{
-        width: 26rem;
+        font-size: .8rem;
+        width: 25.4rem;
     }
 
     #letnik label, #emso label{
@@ -479,4 +480,83 @@ nav img{
         height: 6em;
     }
     /*naredi canvas da dela z scale*/
+}
+
+@media (max-width: 555px){
+    
+    nav{
+        height: 30px;
+      }
+  
+    #centerNav{
+            font-size: .8rem;
+          line-height: 30px;
+          transition:ease 100ms;
+      }
+  
+    nav img{
+          width: 90px;
+      }
+
+    .main{
+        width: 24rem;
+        font-size: .6rem;
+        }
+
+    .main form{
+        width: 20rem;
+    }
+
+    #first, #second, #third, #fourth{
+        border: var(--borderSmol);
+    }
+
+    #imeinsed{
+        height: 3rem;
+    }
+
+    
+    #imeinsed input[type="text"]{
+        font-size: .54rem;
+        width: 17.2rem;
+    }
+
+    #dataVlag{
+        height: 1rem;
+        border-top: var(--borderSmol);
+        border-bottom: var(--borderSmol);
+    }
+    
+    #dataText{
+        border-right: var(--borderSmol);
+        line-height: 1rem;
+    }
+
+    #dataRadio{
+        line-height: 1rem;
+    }
+
+    #dataVlag input[type="radio"]{
+        position: relative;
+        -ms-transform: scale(.6); /* IE 9 */
+        -webkit-transform: scale(.6); /* Chrome, Safari, Opera */
+        transform: scale(.6);
+        top:5%;
+        left: 2%;
+    }
+
+    .t1, #emso, #letnik{
+        border-right: var(--borderSmol);
+    }
+    
+    #letnik{
+        border-left: none;
+    }
+
+
+    #dataDij{
+        height: 1rem;
+        line-height: 1rem;
+    }
+
 }
