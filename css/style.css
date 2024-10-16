@@ -5,7 +5,13 @@
     --linkUnderlineTrnasition: width .2s;
     --defBorder: 2px solid;
     --defWhite : #ffffff;
-    --outlineMain: .5px lightgray solid;
+    --lightBorder: .5px lightgray solid;
+
+/* Color Theme Swatches in HSLA */
+    --flamingOrange: hsl(11, 100%, 17%); 
+    --darkOrange: hsl(7, 75%, 42%); 
+    --orange: hsl(35, 97%, 54%); 
+    --yellow: hsl(48, 100%, 50%);
 }
 
 *{
@@ -26,9 +32,9 @@ body{
 
 nav{
     width: 100%;
-    height: 60px;
+    height: 100px;
     background: var(--defWhite);
-    border-bottom: var(--outlineMain);
+    border-bottom: var(--lightBorder);
 }
 
 nav ul{
@@ -38,7 +44,7 @@ nav ul{
 }
 
 nav img{
-    width: 160px;
+    width: 260px;
 }
 
 
@@ -50,19 +56,18 @@ nav img{
 #centerNav{
     width: 50%;
     text-align: center;
-    line-height: 60px;
+    line-height: 100px;
     font-size: 2rem;
     font-weight: bold;
 }
 
 .main{
-    background:  var(--defWhite);
-    border:var(--outlineMain);
+    background: var(--defWhite);
+    border: var(--lightBorder);
     min-height: max-content;
     margin-top: .5rem;
-    width: 44rem;
-    margin: 0 auto;
-    
+    width: 58rem;
+    margin: 0 auto;  
 }
 
 .main form{
@@ -72,9 +77,8 @@ nav img{
     flex-direction: column;
     row-gap: 1rem;
     height: 100%;
-    width: 40rem;
+    width: 54rem;
 }
-
 
 #first{
     border: 2px solid;
@@ -88,77 +92,83 @@ nav img{
 
 #imeinsed label{
     display: block;
+    padding-left: var(--paddingLeft);
 }
 
 #imeinsed input[type="text"]{
-    width: 38rem;
+    width: 28rem;
     margin: 0 1rem;
 }
 
 #dataVlag{
-    display: flex;
-    align-items: center;
-    border-bottom: 2px solid;
+    display: grid;
+    grid-template-columns: 1fr 1fr ; /*1fr 1fr -> oba dva zasedeta enako prostora*/
+    border-bottom: var(--defBorder);
+    border-top: var(--defBorder);
     width: 100%;
     height: 2rem;
 }
 
 #dataText{
-    width: 50%;
+    background: var(--darkOrange);
     border-right: 2px solid;
     font-weight: bold;
+    box-sizing: border-box;
 }
 
-#dataRadio{
-    width: 50%;
+#dataText, #dataRadio{
+    width: 100%;
+    line-height: 2rem;
+    padding-left: var(--paddingLeft);
 }
 
 .textareas{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     height: 6rem;
     border-bottom: 2px solid;
+    border-collapse: collapse;
 }
 
 .textareas textarea{
-    width: 98.8%;
-    height: 96%;
     resize: none;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .t1{
-    width: 50%;
-    background: red;
     border-right: 2px solid;
 }
 
-.t2{
-    width: 50%;
-    background: greenyellow;
+.t1, .t2{
+    border-radius: 0;
 }
 
 #dataDij{
-    width: 100%;
     height: 2rem;
     line-height: 2rem;
-    border-bottom: 2px solid;
+    background: var(--darkOrange);
+    padding-left:var(--paddingLeft) ;
+    border-bottom: var(--defBorder);
+    font-weight: bold;
 }
 
 #data3{
-    display: flex;
-    width: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     height: 4rem;
-    background: yellowgreen;
-    border-right: 2px solid;
 }
 
 #emso{
-    width: 50%;
+    width: 100%;
 }
 
 #emso label{
     display: block;
     height: 2rem;
     line-height: 2rem;
+    padding-left: var(--paddingLeft);
 }
 
 #emso input[type="text"]{
@@ -170,15 +180,18 @@ nav img{
 }
 
 #letnik{
-    width: 50%;
+    width: 100%;
     height: 100%;
-    border-left: 2px solid;
+    border-left: var(--defBorder);
+    border-right: var(--defBorder);
+    box-sizing: border-box;
 }
 
 #letnik label{
     display: block;
     height: 2rem;
     line-height: 2rem;
+    padding-left: var(--paddingLeft);
 }
 
 #letnik input[type="text"]{
@@ -195,6 +208,7 @@ nav img{
 }
 
 #prijava{
+    background: var(--orange);
     height: 2rem;
     border-bottom: 2px solid;
     line-height: 2rem;
@@ -213,6 +227,7 @@ nav img{
 }
 
 #thHead{
+    background: var(--orange);
     font-weight: bold;
     font-style: italic;
     font-size: 1.5rem;
@@ -228,7 +243,7 @@ nav img{
 
 #thList ul{
     list-style: inside "- ";
-    padding-left: var(--paddingLeft);
+    padding: 0 var(--paddingLeft);
 }
 
 #imporatante{
@@ -270,16 +285,24 @@ nav img{
     display: grid;
     grid-template-columns: 1fr 1fr; /* 1fr 1fr -> 2 enaka stolpca*/
     height: 10rem;
-    background: lightcoral;
+    margin-top: 1rem;
 }
 
 #box1{
     line-height: 10rem;
+    padding-left: var(--paddingLeft);
+}
+
+
+#box1 input[type="date"]{
+    width: 10rem;
+    
 }
 
 #box2 canvas{
     display: block;
-    background: lightgreen;
+    background: var(--yellow);
+    border: var(--lightBorder);
     width: 18em;
     height: 6em;
     border-radius: 10px;
@@ -300,6 +323,7 @@ nav img{
 }
 
 #forhead{
+    background: yellow;
     height: 2rem;
     line-height: 2rem;
     border-bottom: var(--defBorder);
@@ -324,6 +348,7 @@ nav img{
 
 #endMyMisseryPls{
     position: relative;
+    background: var(--darkOrange);
     font-family: "Noto Sans", sans-serif;
     font-size: large;
     width: 12rem;
@@ -335,20 +360,20 @@ nav img{
 }
 
 #endMyMisseryPls:hover{
-    border: 2px hsl(120, 90%, 46%) solid;
+    border: 2px var(--flamingOrange) solid;
     width: 12.6rem;
     height: 3.6rem;
     font-size: 1.2rem;
     transition: ease .05s;
 }
 
-@media (min-width:867px){
+@media (min-width:958px){
     #centerNav{
         transition:ease 100ms;
     }
 }
 
-@media (max-width: 867px){
+@media (max-width: 958px){
 
     #centerNav{
         font-size: 1.5rem;
@@ -357,68 +382,58 @@ nav img{
 
 }
 
-@media (max-width: 655px){
+@media (max-width: 947px){
 
     nav{
-      height: 40px;
+      height: 60px;
     }
 
     #centerNav{
-        font-size: 1rem;
-        line-height: 40px;
+        line-height: 60px;
         transition:ease 100ms;
     }
 
     nav img{
-        width: 120px;
+        width: 160px;
     }
 
     .main{
-        background: lightblue;
         min-height: max-content;
         margin-top: .5rem;
-        width: 100%;
+        width: 44rem;
+        margin: 0 auto;  
     }
     
     .main form{
-        row-gap: 0rem;
+        background: var(--defWhite);
+        display: flex;
+        margin: .5rem auto;
+        flex-direction: column;
+        row-gap: 1rem;
         height: 100%;
-        width: 20rem;
+        width: 40rem;
     }
 
     #first{
-        font-size: .6rem;
-        min-height: 20rem;
-        margin-bottom: 2rem ;
+        border: 2px solid;
+        min-height: 24rem;
     }
 
     #imeinsed{
-        height: 2.5rem;
+        height: 4rem;
     }
 
     #imeinsed input[type="text"]{
-        width: 18rem;
+        width: 38rem;
     }
 
     #dataVlag{
-        height: 1rem;
-    }
-
-    #dataRadio input[type="radio"]{
-        height: .6rem;
-        width: .6rem;
-    }
-
-    .textareas textarea{
-        width: 97.4%;
-        height: 96%;
-        resize: none;
+        height: 2rem;
     }
 
     #emso input[type="text"]{
         position: relative;
-        font-size: .6rem;
-        width: 4.5rem;
+        width: 6.1rem;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -429,17 +444,39 @@ nav img{
 
     #letnik input[type="text"]{
         position: relative;
-        font-size: 1rem;
-        width: 2rem;
+        width: 3rem;
         left: 50%;
         transform: translateX(-50%);
     }
 
 }
 
-@media (max-width: 510px){
+@media (max-width: 725px){
     #centerNav{
-        font-size: .8rem;
+        font-size: 1rem;
         transition:ease 100ms;
     }
+
+    .main{
+        width: 32rem;
+        font-size: .9rem;
+    }
+
+    .main form{
+        width: 28rem;
+    }
+
+    #imeinsed input[type="text"]{
+        width: 26rem;
+    }
+
+    #letnik label, #emso label{
+        font-size: .7rem;
+    }
+
+    #box2 canvas{
+        width: 12em;
+        height: 6em;
+    }
+    /*naredi canvas da dela z scale*/
 }

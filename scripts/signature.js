@@ -8,13 +8,13 @@ let writingMode = false;
 form.addEventListener('submit', (event) =>{
     event.preventDefault();
 
-    const imgUrl = canvas.toDataURL();
+    /*const imgUrl = canvas.toDataURL();
     const image = document.createElement('img');
     image.src = imgUrl;
     image.height = canvas.height;
     image.width = canvas.width;
     image.style.display = 'block';
-    form.appendChild(image);
+    form.appendChild(image);*/
     clearPad();
 })
 
