@@ -28,6 +28,34 @@ function applyMediaQuery() {
         }
     });
 }
-
 // Call the function to apply media queries on page load
 applyMediaQuery();
+
+//Popup code
+const closeModalButton = document.querySelectorAll('[data-close-button]');
+const overlay = document.getElementById('overlay');
+const modal = document.querySelector('.izjavaPopUp');
+
+
+//event listener za close button v popupu
+closeModalButton.forEach(button => {
+    button.addEventListener('click', () => {
+        const modal = button.closest('.izjavaPopUp'); //dobi prvi parrent z classom .izjavaPopUp
+        closePopup(modal);
+    })
+});
+
+function openPopup(){
+    if(modal == null){
+        console.log("here");
+        return;
+    }
+    modal.classList.add('active'); // doda class .active
+    overlay.classList.add('active');
+}
+
+function closePopup(modal){
+    if(modal == null) return
+    modal.classList.remove('active'); //izbirše .active class
+    overlay.classList.remove('active');
+}

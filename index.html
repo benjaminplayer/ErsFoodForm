@@ -12,104 +12,165 @@
 
 <body>
 
-    <nav>
-        <ul>
-            <li class="alignNav"><img src="Img/SCNG-Color.svg" alt="Image"></li>
-            <li id="centerNav">Prijava na šolsko prehrano</li>
-            <li class="alignNav"></li>
-        </ul>
-    </nav>
+    <header>
+        <div id="headLeft">
+            <img src="Img/SCNG-Color.svg" alt="Image">
+        </div>
+        <div id="headCenter">
+            <h1>Prijava na šolsko prehrano</h1>
+        </div>
+        <div id="headRight">
+
+        </div>
+
+
+    </header>
+
     <div class="main">
         <form action="" method="post" class="mainForm">
             <div id="first">
-                <div id="imeinsed">
-                    <label for="IISin">Ime in sedež</label>
-                    <input type="text" id="IISin" required
-                        placeholder="Elektrotehniška in računalniška šola, Cankarjeva 10, 5000 Nova Gorica">
+                <div id="dataText">
+                    <h2>PODATKI O VLAGATELJU</h2>
                 </div>
-                <div id="dataVlag">
-                    <div id="dataText">
-                        PODATKI O VLAGATELJU
+                <div class="gridContainer1">
+                    <div id="imeDiv">
+                        <label for="imeIn">Ime</label>
+                        <input type="text" placeholder="Pinko" id="imeIn">
                     </div>
-                    <div id="dataRadio">
+                    <div id="priimekDiv">
+                        <label for="priimekIn">Priimek</label>
+                        <input type="text" placeholder="Palinko" id="priimekIn">
+                    </div>
+                </div>
+                <div class="gridContainer1">
+                    <div id="naslov">
+                        <label for="">Naslov</label>
+                        <input type="text" placeholder="Cankarjeva 10, Nova Gorica">
+                    </div>
+                    <div id="radio">
                         <input type="radio" name="rad" id="M">
                         <label for="M">Mati</label>
                         <input type="radio" name="rad" id="O">
-                        <label for="O">Oce</label>
+                        <label for="O">Oče</label>
                         <input type="radio" name="rad" id="D">
                         <label for="D">Druga oseba</label>
                     </div>
                 </div>
-                <div class="textareas">
-                    <div class="t1">
-                        <textarea name="" id="" placeholder="Ime, Priimek"></textarea>
-                    </div>
-                    <div class="t2">
-                        <textarea name="" id="" placeholder="Naslov"></textarea>
-                    </div>
-                </div>
+
                 <div id="dataDij">
-                    PODATKI O DIJAKU
+                    <h2>PODATKI O DIJAKU</h2>
                 </div>
-                <div class="textareas">
-                    <div class="t1">
-                        <textarea name="" id="" placeholder="Ime, Priimek"></textarea>
+                <div class="gridContainer2">
+                    <div id="dijImeDiv">
+                        <label for="dijIme">Ime</label>
+                        <input type="text" id="dijIme">
                     </div>
-                    <div class="t2">
-                        <textarea name="" id="" placeholder="Naslov"></textarea>
+                    <div id="dijPriimekDiv">
+                        <label for="dijPriimek">Priimek</label>
+                        <input type="text" id="dijPriimek">
                     </div>
                 </div>
-                <div id="data3">
+                <div class="gridContainer2">
                     <div id="emso">
-                        <label for="emsoin">EMSO</label>
+                        <label for="emsoin">EMŠO</label>
                         <input type="text" name="" id="emsoin" placeholder="0000000505000">
                     </div>
-                    <div id="letnik">
-                        <label for="">Letnik in oddelek</label>
-                        <input type="text" name="" id="" placeholder="XLT">
+                    <div id="naslovDij">
+                        <label for="">Naslov</label>
+                        <input type="text" placeholder="Cankarjeva 10, Nova Gorica">
                     </div>
                 </div>
+
+            </div>
+            <div class="line">
             </div>
             <div id="second">
-                <div id="prijava">PRIJAVA</div>
-                <div id="secondTxt">Spodaj podpisani vlagatelj prijavljam imenovanega dijaka na šolsko malico v šolskem
-                    letu 2024 - 2025 od <input type="date" name="" id=""> dalje</div>
+                <div id="secondHeader">
+                    <h2>Podatki o šoli</h2>
+                </div>
+                <div class="gridContainer3">
+                    <div class="gridContainer4">
+                        <div>
+                            <label for="sole">Ime in sedež šole</label>
+                        </div>
+                        <div id="selection">
+                            <select name="" id="sole">
+                                <option value="">Izberi Šolo</option>
+                                <option value="">Elektrothehniška in računalniška šola, Cankarjeva 10, 5000 Nova Gorica
+                                </option>
+                                <option value="">Višja strokovna šola, Erjavčeva 4a, 5000 Nova Gorica</option>
+                                <option value="">Biotehniška Šola, Ulica padlih borcev 26, 5290 Šempeter pri Gorici
+                                </option>
+                                <option value="">Strojna, prometna in lesarska šola, Erjavčeva 4a, 5000 Nova Gorica
+                                </option>
+                                <option value="">Gimnazija in zdravstvena šola, Cankarjeva 10, 5000 Nova Gorica</option>
+                                <option value="">Medpodjetniški izobraževalni center, Cankarjeva 10, 5000 Nova Gorica
+                                </option>
+                                <option value="">Srednja ekonomska in trgovska šola, Erjavčeva ulica 8, 5000 Nova Gorica
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="letnik" class="gridContainer4">
+                        <label for="">Letnik in oddelek</label>
+                        <select>
+                            <option value="">3rb</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="line">
             </div>
             <div id="third">
-                <div id="thHead">
-                    Izjavljam da sem seznanjen:
+                <div id="thirdTitle">
+                    <h2>Prijava</h2>
                 </div>
-                <div id="thList">
-                    <ul>
-                        <li>z organizacijo šolske prehrane na šoli in s pravili šolske prehrane,</li>
-                        <li>z določbo 9. člena Zakona o šolski prehrani, ki določa, da moram spoštovati pravila šolske
-                            prehrane, plačati prispevek za šolsko prehrano, pravočasno odjaviti posamezen obrok, plačati
-                            polno ceno obroka, če obrok ne bo pravočasno odjavljen ter šoli v 30 dneh sporočiti vsako
-                            spremembo podatkov, navedenih v prijavi;</li>
-                        <li id="imporatante"> da moram malico za naslednji šolski dan odjaviti preko spletne aplikacije
-                            <a href="https://malica.scng.si" target="_blank">mojamalica.scng.si</a> do 13.00 , v
-                            izrednih primerih (bolezen) pa lahko malico za tekoči dan odjavite do 8.00 ure, po e-pošti:
-                            <a href="#" onclick="openMailClient()">malica@scng.si</a>
-                        </li>
-                        <li>s pravico do subvencioniranja šolske prehrane ter načinom in postopkom uveljavljanja
-                            subvencije</li>
-                    </ul>
+                <div id="secondTxt">Spodaj podpisani vlagatelj prijavljam imenovanega dijaka na šolsko malico v šolskem
+                    letu 2024 - 2025 od <input type="date" name="" id=""> dalje
                 </div>
-                <div id="izjava">
-                    Izjavljam tudi, da so vsi podatki, ki sem jih navedel v vlogi resnični, točni in popolni ter v tem
-                    pogledu prevzemam kazensko in materialno odgovornost.
+                <div id="box2">
+                    <div>Podpis vlagatelja</div>
+                    <canvas width="200" height="110" class="signatureField"></canvas>
+                    <span class="delete">Izbris</span>
                 </div>
-                <div id="sepparator">
-                    <div id="box1">
-                        <label for="izpolnitevDate">Datum</label>
-                        <input type="date" name="" id="izpolnitevDate">
+                <div id="izjavaWarning">
+                    <input type="checkbox" name="" id="izjavaCheck"> <label>Prebral sem <span onclick="openPopup()"
+                            class="popUpTrigger">izjavo</span> in se z njo tudi strinjam</label>
+                </div>
+
+                <div class="izjavaPopUp">
+                    <div id="popUpHead">
+                        <div id="popUpHeadText">Izjavljam da sem seznanjen</div>
+                        <div id="PopUpClose"><button data-close-button class="CloseButton">&times;</button></div>
                     </div>
-                    <div id="box2">
-                        <div>Podpis vlagatelja</div>
-                        <canvas width="290" height="100" class="signatureField"></canvas>
-                        <span class="delete">Izbris</span>
+                    <div id="popUpList">
+                        <ul>
+                            <li>z organizacijo šolske prehrane na šoli in s pravili šolske prehrane,</li>
+                            <li>z določbo 9. člena Zakona o šolski prehrani, ki določa, da moram spoštovati pravila
+                                šolske
+                                prehrane, plačati prispevek za šolsko prehrano, pravočasno odjaviti posamezen obrok,
+                                plačati
+                                polno ceno obroka, če obrok ne bo pravočasno odjavljen ter šoli v 30 dneh sporočiti
+                                vsako
+                                spremembo podatkov, navedenih v prijavi;</li>
+                            <li id="imporatante"> da moram malico za naslednji šolski dan odjaviti preko spletne
+                                aplikacije
+                                <a href="https://malica.scng.si" target="_blank">mojamalica.scng.si</a> do 13.00 , v
+                                izrednih primerih (bolezen) pa lahko malico za tekoči dan odjavite do 8.00 ure, po
+                                e-pošti:
+                                <a href="#" onclick="openMailClient()">malica@scng.si</a>
+                            </li>
+                            <li>s pravico do subvencioniranja šolske prehrane ter načinom in postopkom uveljavljanja
+                                subvencije</li>
+                        </ul>
+                    </div>
+                    <div id="izjava">
+                        Izjavljam tudi, da so vsi podatki, ki sem jih navedel v vlogi resnični, točni in popolni ter v
+                        tem
+                        pogledu prevzemam kazensko in materialno odgovornost.
                     </div>
                 </div>
+                <div id="overlay"></div>
             </div>
             <div id="fourth">
                 <div id="forhead">
@@ -138,5 +199,4 @@
     <script src="scripts/signature.js"></script>
     <script src="scripts/script.js"></script>
 </body>
-
 </html>

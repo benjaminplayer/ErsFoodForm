@@ -3,16 +3,46 @@
 :root{
     --paddingLeft: .3rem;
     --linkUnderlineTrnasition: width .2s;
-    --defBorder: 2px solid;
+    --defBorder: 2px #9b51e0 solid;;
     --defWhite : #ffffff;
-    --lightBorder: .5px lightgray solid;
+    --lightBorder: .5px #eeeff0 solid;
     --borderSmol: 1.5px solid;
+    --defaultFont: "Noto Sans", sans-serif;
 
 /* Color Theme Swatches in HSLA */
     --flamingOrange: hsl(11, 100%, 17%); 
     --darkOrange: hsl(7, 75%, 42%); 
     --orange: hsl(35, 97%, 54%); 
     --yellow: hsl(48, 100%, 50%);
+
+    --black: #000000;
+
+    --cyan-bluish-gray: #abb8c3;
+
+    --white: #ffffff;
+
+    --pale-pink: #f78da7;
+
+    --vivid-red: #cf2e2e;
+
+    --luminous-vivid-orange: #ff6900;
+
+    --luminous-vivid-amber: #fcb900;
+
+    --light-green-cyan: #7bdcb5;
+
+    --vivid-green-cyan: #00d084;
+
+    --pale-cyan-blue: #8ed1fc;
+
+    --vivid-cyan-blue: #0693e3;
+
+    --vivid-purple: #9b51e0;
+
+    --font-color: #082b3b;
+
+    --gray-ish:#eeeff0;
+
 }
 
 *{
@@ -26,40 +56,37 @@ html, body{
 }
 
 body{
-    background: url(../Img/empty_pattern.png) repeat;
-    font-family: "Noto Sans", sans-serif;
-    font-size: 16px;
+    background: #eeeff0;
+    font-family: var(--defaultFont);
+    font-size: 18px;
+    color: var(--font-color);
 }
 
-nav{
+input{
+    font: var(--defaultFont);
+}
+
+header{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
     width: 100%;
     height: 100px;
     background: var(--defWhite);
     border-bottom: var(--lightBorder);
 }
 
-nav ul{
-    display: flex;
-    justify-content: space-evenly;
-    list-style: none;
+#headLeft{
+    align-self: center;
+    margin-left: 1rem;
 }
 
-nav img{
+#headLeft img{
     width: 260px;
 }
 
-
-.alignNav{
-    width: 25%;
-    flex-shrink: 2;
-}
-
-#centerNav{
-    width: 50%;
-    text-align: center;
-    line-height: 100px;
-    font-size: 2rem;
-    font-weight: bold;
+#headCenter{
+    align-self: center;
+    justify-self: center;
 }
 
 .main{
@@ -67,7 +94,7 @@ nav img{
     border: var(--lightBorder);
     min-height: max-content;
     margin-top: .5rem;
-    width: 58rem;
+    width: 66rem;
     margin: 0 auto;  
 }
 
@@ -78,12 +105,48 @@ nav img{
     flex-direction: column;
     row-gap: 1rem;
     height: 100%;
-    width: 54rem;
+    width: 58rem;
+    padding: 0.5rem 4rem;
 }
 
 #first{
-    border: 2px solid;
+    width: 100%;
     min-height: 24rem;
+}
+
+.gridContainer1, .gridContainer2{
+    display: grid;
+    grid-template-columns: 1fr 1fr; /*1fr -> dodeli 2 divom enako prostora (50%)*/
+    height: 4rem;
+}
+
+#dataText{
+    /*background: var(--darkOrange);*/
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+#imeDiv label, #priimekDiv label{
+    display: block;
+}
+
+#imeDiv input[type="text"], #priimekDiv input[type="text"], #naslov input[type="text"]{
+    width: 60%;
+    height: 1.5rem;
+    font-size: .9rem;
+}
+
+#naslov{
+    height: 4rem;
+}
+
+#naslov label{
+    display: block;
+}
+
+#radio{
+    width: 100%;
+    align-self: center;
 }
 
 #imeinsed{
@@ -96,125 +159,80 @@ nav img{
     padding-left: var(--paddingLeft);
 }
 
-#imeinsed input[type="text"]{
-    width: 28rem;
-    margin: 0 1rem;
-}
-
-#dataVlag{
-    display: grid;
-    grid-template-columns: 1fr 1fr ; /*1fr 1fr -> oba dva zasedeta enako prostora*/
-    border-bottom: var(--defBorder);
-    border-top: var(--defBorder);
-    width: 100%;
-    height: 2rem;
-}
-
-#dataText{
-    background: var(--darkOrange);
-    border-right: 2px solid;
-    font-weight: bold;
-    box-sizing: border-box;
-}
-
-#dataText, #dataRadio{
-    width: 100%;
-    line-height: 2rem;
-    padding-left: var(--paddingLeft);
-}
-
-.textareas{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 6rem;
-    border-bottom: 2px solid;
-    border-collapse: collapse;
-}
-
-.textareas textarea{
-    resize: none;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-}
-
-.t1{
-    border-right: 2px solid;
-}
-
-.t1, .t2{
-    border-radius: 0;
+#imeinsed select{
+    width: 50%;
+    margin: 0 calc(54rem/4);
 }
 
 #dataDij{
     height: 2rem;
     line-height: 2rem;
-    background: var(--darkOrange);
-    padding-left:var(--paddingLeft) ;
-    border-bottom: var(--defBorder);
+    /*background: var(--darkOrange);*/
+    /*padding-left:var(--paddingLeft);*/
     font-weight: bold;
 }
 
-#data3{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    height: 4rem;
+.gridContainer2 label{
+    display: block;
+}
+
+.gridContainer2 input[type="text"]{
+    width:60%;
+    height: 1.5rem;
+    font-size: .9rem;
 }
 
 #emso{
     width: 100%;
 }
 
-#emso label{
-    display: block;
-    height: 2rem;
-    line-height: 2rem;
-    padding-left: var(--paddingLeft);
+#emso{
+    width: 12rem;
 }
 
-#emso input[type="text"]{
-    position: relative;
-    width: 6.1rem;
-    height: 2em;
-    left: 50%;
-    transform: translateX(-50%);
+.line{
+    margin: 0 -4rem;
+    border-bottom: var(--lightBorder);
+}
+
+#second{
+    min-height: 8rem;
+}
+
+.gridContainer3{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.gridContainer4{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    height: 6rem;
+}
+
+#selection select, #selection select option{
+    font-family: var(--defaultFont);
+    font-size: .9rem;
+    height: 1.6rem;
 }
 
 #letnik{
-    width: 100%;
-    height: 100%;
-    border-left: var(--defBorder);
-    border-right: var(--defBorder);
-    box-sizing: border-box;
+    padding-left: 2rem;
 }
 
 #letnik label{
     display: block;
-    height: 2rem;
-    line-height: 2rem;
-    padding-left: var(--paddingLeft);
 }
 
-#letnik input[type="text"]{
-    position: relative;
-    font-size: 1.5rem;
-    width: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
+#letnik select, #letnik select option{
+    font-family: var(--defaultFont);
+    font-size: .9rem;
+    height: 1.6rem;
+    width: 4rem;
 }
 
-#second{
-    min-height: 6rem;
-    border: 2px solid;
-}
-
-#prijava{
-    background: var(--orange);
-    height: 2rem;
-    border-bottom: 2px solid;
-    line-height: 2rem;
-    font-weight: bold;
-    padding-left: var(--paddingLeft);
+#third{
+    min-height: 18rem;
 }
 
 #secondTxt{
@@ -222,42 +240,93 @@ nav img{
     padding-left: var(--paddingLeft);
 }
 
-#third{
-    border: 2px solid;
-    min-height: 31rem;
+.izjavaPopUp{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: var(--defBorder);
+    border-radius: 10px;
+    z-index: 999;
+    background: var(--white);
+    width: 50rem;
+    max-width: 80%;
 }
 
-#thHead{
-    background: var(--orange);
+.izjavaPopUp.active{
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#popUpHead{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 .5rem;
+    border-bottom: var(--defBorder);
+}
+
+#popUpHead button{
+    cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#popUpHeadText{
+    /*background: var(--orange);*/
     font-weight: bold;
     font-style: italic;
     font-size: 1.5rem;
     height: 2em;
-    line-height: 2em;
-    border-bottom: 2px solid;
-    padding: 0 var(--paddingLeft);
 }
 
-#thList{
-    margin-top: 1rem;
-}
-
-#thList ul{
+#popUpList ul{
     list-style: inside "- ";
-    padding: 0 var(--paddingLeft);
+    padding: 0 .5rem;
+}
+
+#izjava{
+    padding: .5rem .5rem;
+    height: 3rem;
+}
+
+#izjavaWarning span{
+    cursor: pointer;
+    color: var(--luminous-vivid-orange);
+    text-decoration: underline 2px var(--luminous-vivid-orange);
+}
+
+#overlay{
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0; /* zapolni cel screen*/
+    background: rgba(171, 184, 195, .5);
+    pointer-events: none; /* kadar je popup neviden, ne capture-a clickov */
+}
+
+#overlay.active{
+    opacity: 1;
+    pointer-events: all;
 }
 
 #imporatante{
     color: red;
 }
 
-#thList ul li a{
+#popUpList ul li a{
     position: relative;
     color:red;
     text-decoration: none;
 }
 
-#thList ul li a::after{
+#popUpList ul li a::after{
     content: '';
     position: absolute;
     height: 2px;
@@ -268,36 +337,15 @@ nav img{
     transition: var(--linkUnderlineTrnasition);
 }
 
-#thList ul li a:hover{
+#popUpList ul li a:hover{
     color: rgb(85, 26, 139);
 }
 
-#thList ul li a:hover:after{
+#popUpList ul li a:hover:after{
     width: 100%;
 }
 
-#izjava{
-    margin-top: 1rem;
-    padding: 0 var(--paddingLeft);
-    height: 3rem;
-}
-
-#sepparator{
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 1fr 1fr -> 2 enaka stolpca*/
-    height: 10rem;
-    margin-top: 1rem;
-}
-
-#box1{
-    line-height: 10rem;
-    padding-left: var(--paddingLeft);
-}
-
-#box1 input[type="date"]{
-    width: 10rem;
-    
-}
+/*Fix canvas problems*/
 
 #box2 canvas{
     display: block;
@@ -313,22 +361,20 @@ nav img{
 }
 
 .delete:hover{
+    cursor: pointer;
     text-decoration: 1.5px underline;
 }
 
 #fourth{
     min-height: 13rem;
-    border: var(--defBorder);
     list-style: inside;
 }
 
 #forhead{
-    background: yellow;
     height: 2rem;
     line-height: 2rem;
-    border-bottom: var(--defBorder);
     font-weight: bold;
-    padding-left: var(--paddingLeft);
+
 }
 
 #foText{
@@ -342,8 +388,8 @@ nav img{
 #fifth{
     /*border: var(--defBorder);*/
     text-align: center;
-    height: 4rem;
-    line-height: 4rem;
+    height: 3rem;
+    line-height: 3rem;
 }
 
 #endMyMisseryPls{
@@ -367,16 +413,18 @@ nav img{
     transition: ease .05s;
 }
 
-@media (min-width:958px){
+/* TODO: Fix media queries */
+
+@media (min-width:1080){
     #centerNav{
         transition:ease 100ms;
     }
 }
 
-@media (max-width: 958px){
+@media (max-width: 1080px){
 
-    #centerNav{
-        font-size: 1.5rem;
+    header{
+        font-size: .9rem;
         transition:ease 100ms;
     }
 
@@ -384,7 +432,7 @@ nav img{
 
 @media (max-width: 947px){
 
-    nav{
+    header{
       height: 60px;
     }
 
@@ -393,7 +441,7 @@ nav img{
         transition:ease 100ms;
     }
 
-    nav img{
+    header img{
         width: 160px;
     }
 
@@ -484,7 +532,7 @@ nav img{
 
 @media (max-width: 555px){
     
-    nav{
+    header{
         height: 30px;
       }
   
@@ -494,7 +542,7 @@ nav img{
           transition:ease 100ms;
       }
   
-    nav img{
+      header img{
           width: 90px;
       }
 
