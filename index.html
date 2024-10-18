@@ -27,7 +27,7 @@
     </header>
 
     <div class="main">
-        <form action="" method="post" class="mainForm">
+        <form action="" method="get" class="mainForm">
             <div id="first">
                 <div id="dataText">
                     <h2>PODATKI O VLAGATELJU</h2>
@@ -42,7 +42,7 @@
                         <input type="text" placeholder="Palinko" id="priimekIn">
                     </div>
                 </div>
-                <div class="gridContainer1">
+                <div class="gridContainer1" id="gridContMedia">
                     <div id="naslov">
                         <label for="">Naslov</label>
                         <input type="text" placeholder="Cankarjeva 10, Nova Gorica">
@@ -63,14 +63,14 @@
                 <div class="gridContainer2">
                     <div id="dijImeDiv">
                         <label for="dijIme">Ime</label>
-                        <input type="text" id="dijIme">
+                        <input type="text" id="dijIme" placeholder="Tinko">
                     </div>
                     <div id="dijPriimekDiv">
                         <label for="dijPriimek">Priimek</label>
-                        <input type="text" id="dijPriimek">
+                        <input type="text" id="dijPriimek" placeholder="Pobalinko">
                     </div>
                 </div>
-                <div class="gridContainer2">
+                <div class="gridContainer2" id="gridContDij">
                     <div id="emso">
                         <label for="emsoin">EMŠO</label>
                         <input type="text" name="" id="emsoin" placeholder="0000000505000">
@@ -88,7 +88,7 @@
                 <div id="secondHeader">
                     <h2>Podatki o šoli</h2>
                 </div>
-                <div class="gridContainer3">
+                <div class="gridContainer3" id="gridContSol">
                     <div class="gridContainer4">
                         <div>
                             <label for="sole">Ime in sedež šole</label>

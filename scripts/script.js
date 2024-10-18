@@ -59,3 +59,6 @@ function closePopup(modal){
     modal.classList.remove('active'); //izbirše .active class
     overlay.classList.remove('active');
 }
+
+//Input masks
+

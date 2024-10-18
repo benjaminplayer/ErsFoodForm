@@ -349,7 +349,7 @@ header{
 
 #box2 canvas{
     display: block;
-    background: var(--yellow);
+    background: var(--luminous-vivid-amber);
     border: var(--lightBorder);
     width: 18em;
     height: 6em;
@@ -415,7 +415,7 @@ header{
 
 /* TODO: Fix media queries */
 
-@media (min-width:1080){
+@media (min-width:1080px){
     #centerNav{
         transition:ease 100ms;
     }
@@ -425,31 +425,20 @@ header{
 
     header{
         font-size: .9rem;
+        height: 80px;
         transition:ease 100ms;
     }
-
-}
-
-@media (max-width: 947px){
-
-    header{
-      height: 60px;
-    }
-
-    #centerNav{
-        line-height: 60px;
-        transition:ease 100ms;
-    }
-
-    header img{
-        width: 160px;
+    
+    #headLeft img{
+        width: 180px;
     }
 
     .main{
         min-height: max-content;
         margin-top: .5rem;
-        width: 44rem;
+        width: 50rem;
         margin: 0 auto;  
+        transition: ease 100ms;
     }
     
     .main form{
@@ -460,41 +449,58 @@ header{
         row-gap: 1rem;
         height: 100%;
         width: 40rem;
+        transition: ease 100ms;
     }
 
-    #first{
-        border: 2px solid;
-        min-height: 24rem;
+}
+
+@media (max-width: 835px){
+    h2{
+        font-size: 1.1rem;
+    }
+    header{
+        font-size: .7rem;
+        height: 60px;
+        transition:ease 100ms;
     }
 
-    #imeinsed{
-        height: 4rem;
+    #headLeft img{
+        width: 140px;
     }
 
-    #imeinsed input[type="text"]{
-        width: 38rem;
+    .main{
+        min-height: max-content;
+        font-size: .9rem;
+        width:35rem
     }
 
-    #dataVlag{
-        height: 2rem;
+    .main form{
+        width: 26rem;
+        transition:ease 100ms;
     }
 
-    #emso input[type="text"]{
-        position: relative;
-        width: 6.1rem;
-        left: 50%;
-        transform: translateX(-50%);
+    #gridContMedia.gridContainer1, #gridContDij.gridContainer2{
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr;
+        height: 8rem;
+        transition:ease 100ms;
     }
 
-    #letnik label{
-        line-height: 2rem;
+    #gridContSol.gridContainer3{
+        grid-template-columns: none;
+        grid-template-rows: 1fr .5fr;
     }
 
-    #letnik input[type="text"]{
-        position: relative;
-        width: 3rem;
-        left: 50%;
-        transform: translateX(-50%);
+    #selection select, #selection option, #letnik select, #letnik option{
+        font-size: .8rem;
+    }
+
+    .gridContainer4{
+        height: 3rem;
+    }
+
+    #letnik{
+        padding:0;
     }
 
 }
@@ -530,7 +536,7 @@ header{
     /*naredi canvas da dela z scale*/
 }
 
-@media (max-width: 555px){
+@media (max-width: 20px){
     
     header{
         height: 30px;
