@@ -293,6 +293,12 @@ header{
     height: 3rem;
 }
 
+#izjava{
+    height: 2rem;
+    margin-top: .5rem;
+    line-height: 2rem;
+}
+
 #izjavaWarning span{
     cursor: pointer;
     color: var(--luminous-vivid-orange);
@@ -322,7 +328,7 @@ header{
 
 #popUpList ul li a{
     position: relative;
-    color:red;
+    color: var(--vivid-purple);
     text-decoration: none;
 }
 
@@ -333,12 +339,12 @@ header{
     left: 0;
     bottom: 0;
     width: 0%;
-    background: rgb(85, 26, 139);
+    background: var(--vivid-purple);
     transition: var(--linkUnderlineTrnasition);
 }
 
 #popUpList ul li a:hover{
-    color: rgb(85, 26, 139);
+    color: var(--vivid-purple);
 }
 
 #popUpList ul li a:hover:after{
@@ -416,7 +422,11 @@ header{
 /* TODO: Fix media queries */
 
 @media (min-width:1080px){
-    #centerNav{
+    header{
+        transition:ease 100ms;
+    }
+
+    .main, .main form{
         transition:ease 100ms;
     }
 }
@@ -469,6 +479,7 @@ header{
     }
 
     .main{
+        transition: ease 100ms;
         min-height: max-content;
         font-size: .9rem;
         width:35rem
@@ -503,114 +514,157 @@ header{
         padding:0;
     }
 
-}
-
-@media (max-width: 725px){
-    #centerNav{
-        font-size: 1rem;
-        transition:ease 100ms;
+    #third{
+        min-height: 14rem;
     }
 
-    .main{
-        width: 32rem;
+}
+
+@media (max-width: 650px){
+
+    h2{
         font-size: .9rem;
     }
 
-    .main form{
+    header{
+        font-size: .5rem;
+        height: 40px;
+        transition:ease 100ms;
+    }
+
+    #headLeft img{
+        width: 100px;
+    }
+
+    .main{
         width: 28rem;
     }
 
-    #imeinsed input[type="text"]{
-        font-size: .8rem;
-        width: 25.4rem;
-    }
-
-    #letnik label, #emso label{
-        font-size: .7rem;
-    }
-
-    #box2 canvas{
-        width: 12em;
-        height: 6em;
-    }
-    /*naredi canvas da dela z scale*/
-}
-
-@media (max-width: 20px){
-    
-    header{
-        height: 30px;
-      }
-  
-    #centerNav{
-            font-size: .8rem;
-          line-height: 30px;
-          transition:ease 100ms;
-      }
-  
-      header img{
-          width: 90px;
-      }
-
-    .main{
-        width: 24rem;
-        font-size: .6rem;
-        }
-
     .main form{
         width: 20rem;
+        font-size: .6rem;
     }
 
-    #first, #second, #third, #fourth{
-        border: var(--borderSmol);
+    #first{
+        min-height: 18rem;
     }
 
-    #imeinsed{
+    #first input[type="text"]{
+        height: .9rem;
+        font-size: inherit;
+    }
+
+    /*praši za resize od radio*/
+
+    #gridVlag.gridContainer1, #naslov,.gridContainer2{
         height: 3rem;
     }
 
-    
-    #imeinsed input[type="text"]{
-        font-size: .54rem;
-        width: 17.2rem;
+    #gridContMedia.gridContainer1{
+        height: 4rem;
     }
 
-    #dataVlag{
-        height: 1rem;
-        border-top: var(--borderSmol);
-        border-bottom: var(--borderSmol);
-    }
-    
-    #dataText{
-        border-right: var(--borderSmol);
-        line-height: 1rem;
+    #gridContDij.gridContainer2{
+        height: 5rem;
     }
 
-    #dataRadio{
-        line-height: 1rem;
+
+    #selection select, #selection select option, #letnik select, #letnik select option{
+        font-size: .6rem;
     }
 
-    #dataVlag input[type="radio"]{
-        position: relative;
-        -ms-transform: scale(.6); /* IE 9 */
-        -webkit-transform: scale(.6); /* Chrome, Safari, Opera */
-        transform: scale(.6);
-        top:5%;
-        left: 2%;
-    }
-
-    .t1, #emso, #letnik{
-        border-right: var(--borderSmol);
-    }
-    
     #letnik{
-        border-left: none;
+        padding-top: .5rem;
     }
 
+    .gridContainer4{
+        height: 2rem;
+    }
 
-    #dataDij{
+    #izjavaWarning{
         height: 1rem;
-        line-height: 1rem;
+        line-height: normal;
+        margin-top: 0.8rem;
+    }
+
+    #third, #fourth{
+        min-height: 11rem;
+    }
+
+    /*naredi canvas da dela z scale*/
+}
+
+@media (max-width: 470px){
+    
+    h2{
+        font-size: .7rem;
+    }
+
+    header{
+        font-size: .4rem;
+        height: 40px;
+        transition:ease 100ms;
+    }
+
+    #headLeft img{
+        width: 100px;
+    }
+
+    .main{
+        width: 26rem;
+    }
+
+    .main form{
+        width: 18rem;
+    }
+
+}
+
+@media (max-width: 433px){
+
+    h2{
+        font-size: initial;
+    }
+    header{
+        width: 99vw;
+    }
+    .main{
+        margin: 0;
+        border-left: none;
+        border-right: none;
+        width: 99vw;
+        box-sizing: border-box;
+    }
+
+    .main form{
+        padding: 0;
+        box-sizing: border-box;
+        width: 100%;
+        font-size: 1.1rem;
+    }
+    .line{
+        width: 100%;
+    }
+
+    #first{
+        display: grid;
+        grid-template-rows:.3fr 1.5fr 1fr .3fr 1.5fr 1.5fr;
+        min-height: 35rem;
+        padding-left: .2rem;
+    }
+
+    #dataText{
+        justify-self: center;
+    }
+
+    #gridVlag.gridContainer1, #gridContMedia.gridContainer1, .gridContainer2{
+        grid-template-columns: none;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    #gridVlag.gridContainer1 input[type="text"], #gridContMedia.gridContainer1 input[type="text"]{
+        width: 90%;
+        height: 1.5rem;
     }
 
 }
