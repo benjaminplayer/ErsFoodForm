@@ -328,7 +328,7 @@ header{
 
 #popUpList ul li a{
     position: relative;
-    color: var(--vivid-purple);
+    color: var(--luminous-vivid-orange);
     text-decoration: none;
 }
 
@@ -339,12 +339,12 @@ header{
     left: 0;
     bottom: 0;
     width: 0%;
-    background: var(--vivid-purple);
-    transition: var(--linkUnderlineTrnasition);
+    background: var(--luminous-vivid-orange);
+    transition: var(--luminous-vivid-orange);
 }
 
 #popUpList ul li a:hover{
-    color: var(--vivid-purple);
+    color: var(--luminous-vivid-orange);
 }
 
 #popUpList ul li a:hover:after{
@@ -653,6 +653,11 @@ header{
         padding-left: .2rem;
     }
 
+    #first input[type="text"]{
+        width: 90%;
+        height: 1.5rem;
+    }
+
     #dataText{
         justify-self: center;
     }
@@ -662,9 +667,41 @@ header{
         grid-template-rows: 1fr 1fr;
     }
 
-    #gridVlag.gridContainer1 input[type="text"], #gridContMedia.gridContainer1 input[type="text"]{
-        width: 90%;
-        height: 1.5rem;
+    #gridContMedia.gridContainer1 input[type="radio"]{
+        margin-top: 1rem;
+    }
+
+    #emso{
+        width: 10rem;
+    }
+
+    #gridContSol.gridContainer3{
+        height: 8rem;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    /*popravi clamps*/
+
+    #selection select, #letnik select{
+        height: clamp(1rem, 7vw,1.6rem);
+    }
+
+    #selection select, #selection select option, #letnik select, #letnik select option{
+        font-size: clamp(0.3rem,2.5vw,.64rem);
+    }
+    #third{
+        display: flex;
+        flex-direction: column;
+    }
+
+    #secondTxt{
+        height: 7rem;
+    }
+
+
+
+    #izjavaWarning{
+        height: 2rem;
     }
 
 }

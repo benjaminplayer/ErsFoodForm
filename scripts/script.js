@@ -8,8 +8,8 @@ canvas.height = y;
 
 function applyMediaQuery() {
 
-    var mediaQuery = window.matchMedia("(max-width: 725px)");
-
+    let mediaQuery = window.matchMedia("(max-width: 725px)");
+    //let hideImg = window.matchMedia("(max-width: 433px)");
     // Check if the media query matches
     if (mediaQuery.matches) {
         // Apply new canvas size for small screens
@@ -18,6 +18,15 @@ function applyMediaQuery() {
         // Apply default canvas size for larger screens
         resizeCanvas(290, 100);
     }
+
+    /*if(hideImg.matches){
+        let headLeft =  document.getElementById("headLeft");
+        let hedCenter = document.getElementById("headCenter")
+        let hedRight = document.getElementById("headRight");
+
+        headLeft.remove();
+        hedRight.remove();
+    }*/
 
     // Listen for media query changes
     mediaQuery.addEventListener('change', function(e) {
