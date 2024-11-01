@@ -3,7 +3,7 @@
 :root{
     --paddingLeft: .3rem;
     --linkUnderlineTrnasition: width .2s;
-    --defBorder: 2px #9b51e0 solid;;
+    --defBorder: 2px var(--luminous-vivid-amber) solid;;
     --defWhite : #ffffff;
     --lightBorder: .5px #eeeff0 solid;
     --borderSmol: 1.5px solid;
@@ -95,7 +95,8 @@ header{
     min-height: max-content;
     margin-top: .5rem;
     width: 66rem;
-    margin: 0 auto;  
+    margin: 0 auto 1rem auto;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
 .main form{
@@ -264,6 +265,7 @@ header{
     align-items: center;
     padding: 0 .5rem;
     border-bottom: var(--defBorder);
+    height: 4rem;
 }
 
 #popUpHead button{
@@ -276,11 +278,9 @@ header{
 }
 
 #popUpHeadText{
-    /*background: var(--orange);*/
     font-weight: bold;
     font-style: italic;
     font-size: 1.5rem;
-    height: 2em;
 }
 
 #popUpList ul{
@@ -290,11 +290,7 @@ header{
 
 #izjava{
     padding: .5rem .5rem;
-    height: 3rem;
-}
-
-#izjava{
-    height: 2rem;
+    height: 4rem;
     margin-top: .5rem;
     line-height: 2rem;
 }
@@ -323,12 +319,12 @@ header{
 }
 
 #imporatante{
-    color: red;
+    color: var(--vivid-red);
 }
 
 #popUpList ul li a{
     position: relative;
-    color: var(--luminous-vivid-orange);
+    color: var(--vivid-cyan-blue);
     text-decoration: none;
 }
 
@@ -339,12 +335,12 @@ header{
     left: 0;
     bottom: 0;
     width: 0%;
-    background: var(--luminous-vivid-orange);
-    transition: var(--luminous-vivid-orange);
+    background: var(--vivid-cyan-blue);
+    transition: var(--linkUnderlineTrnasition);
 }
 
 #popUpList ul li a:hover{
-    color: var(--luminous-vivid-orange);
+    color: var(--vivid-cyan-blue);
 }
 
 #popUpList ul li a:hover:after{
@@ -627,7 +623,17 @@ header{
     }
     header{
         width: 99vw;
+        grid-template-columns: 1fr;
     }
+
+    #headCenter{
+        width: unset;
+        justify-self: center;
+        font-size: .7rem;
+        font-weight: bold;
+        transition: ease 100ms;
+    }
+
     .main{
         margin: 0;
         border-left: none;

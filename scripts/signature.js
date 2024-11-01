@@ -5,19 +5,6 @@ const ctx = canvas.getContext('2d');
 
 let writingMode = false;
 
-form.addEventListener('submit', (event) =>{
-    event.preventDefault();
-
-    /*const imgUrl = canvas.toDataURL();
-    const image = document.createElement('img');
-    image.src = imgUrl;
-    image.height = canvas.height;
-    image.width = canvas.width;
-    image.style.display = 'block';
-    form.appendChild(image);*/
-    clearPad();
-})
-
 const clearPad = () => {
     ctx.clearRect(0,0, canvas.width, canvas.height);
 }

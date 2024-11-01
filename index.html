@@ -12,7 +12,7 @@
 
 <body>
 
-    <header>
+    <header id="header">
         <div id="headLeft">
             <img src="Img/SCNG-Color.svg" alt="Image">
         </div>
@@ -27,7 +27,7 @@
     </header>
 
     <div class="main">
-        <form action="" method="get" class="mainForm">
+        <form action="" method="post" class="mainForm" id="mainFormus" novalidate onsubmit="validate(event)">
             <div id="first">
                 <div id="dataText">
                     <h2>PODATKI O VLAGATELJU</h2>
@@ -35,20 +35,20 @@
                 <div class="gridContainer1" id="gridVlag">
                     <div id="imeDiv">
                         <label for="imeIn">Ime</label>
-                        <input type="text" placeholder="Pinko" id="imeIn" required>
+                        <input type="text" placeholder="Pinko" id="imeIn" class="onlyLetters" required>
                     </div>
                     <div id="priimekDiv">
                         <label for="priimekIn">Priimek</label>
-                        <input type="text" placeholder="Palinko" id="priimekIn">
+                        <input type="text" placeholder="Palinko" id="priimekIn" class="onlyLetters" required>
                     </div>
                 </div>
                 <div class="gridContainer1" id="gridContMedia">
                     <div id="naslov">
                         <label for="">Naslov</label>
-                        <input type="text" placeholder="Cankarjeva 10, Nova Gorica">
+                        <input type="text" placeholder="Cankarjeva 10, Nova Gorica" required>
                     </div>
                     <div id="radio">
-                        <input type="radio" name="rad" id="M">
+                        <input type="radio" name="rad" id="M" required>
                         <label for="M">Mati</label>
                         <input type="radio" name="rad" id="O">
                         <label for="O">Oče</label>
@@ -56,28 +56,27 @@
                         <label for="D">Druga oseba</label>
                     </div>
                 </div>
-
                 <div id="dataDij">
                     <h2>PODATKI O DIJAKU</h2>
                 </div>
                 <div class="gridContainer2">
                     <div id="dijImeDiv">
                         <label for="dijIme">Ime</label>
-                        <input type="text" id="dijIme" placeholder="Tinko">
+                        <input type="text" id="dijIme" placeholder="Tinko" class="onlyLetters" required>
                     </div>
                     <div id="dijPriimekDiv">
                         <label for="dijPriimek">Priimek</label>
-                        <input type="text" id="dijPriimek" placeholder="Pobalinko">
+                        <input type="text" id="dijPriimek" placeholder="Pobalinko" class="onlyLetters" required>
                     </div>
                 </div>
                 <div class="gridContainer2" id="gridContDij">
                     <div id="emso">
                         <label for="emsoin">EMŠO</label>
-                        <input type="text" name="" id="emsoin" placeholder="0000000505000">
+                        <input type="text" name="" id="emsoin" placeholder="0000000505000" required>
                     </div>
                     <div id="naslovDij">
                         <label for="">Naslov</label>
-                        <input type="text" placeholder="Cankarjeva 10, Nova Gorica">
+                        <input type="text" placeholder="Cankarjeva 10, Nova Gorica" required>
                     </div>
                 </div>
 
@@ -95,26 +94,26 @@
                         </div>
                         <div id="selection">
                             <select name="" id="sole">
-                                <option value="">Izberi Šolo</option>
-                                <option value="">Elektrothehniška in računalniška šola, Cankarjeva 10, 5000 Nova Gorica
+                                <option value="0">Izberi Šolo</option>
+                                <option value="1">Elektrothehniška in računalniška šola, Cankarjeva 10, 5000 Nova Gorica
                                 </option>
-                                <option value="">Višja strokovna šola, Erjavčeva 4a, 5000 Nova Gorica</option>
-                                <option value="">Biotehniška Šola, Ulica padlih borcev 26, 5290 Šempeter pri Gorici
+                                <option value="2">Višja strokovna šola, Erjavčeva 4a, 5000 Nova Gorica</option>
+                                <option value="3">Biotehniška Šola, Ulica padlih borcev 26, 5290 Šempeter pri Gorici
                                 </option>
-                                <option value="">Strojna, prometna in lesarska šola, Erjavčeva 4a, 5000 Nova Gorica
+                                <option value="4">Strojna, prometna in lesarska šola, Erjavčeva 4a, 5000 Nova Gorica
                                 </option>
-                                <option value="">Gimnazija in zdravstvena šola, Cankarjeva 10, 5000 Nova Gorica</option>
-                                <option value="">Medpodjetniški izobraževalni center, Cankarjeva 10, 5000 Nova Gorica
+                                <option value="5">Gimnazija in zdravstvena šola, Cankarjeva 10, 5000 Nova Gorica</option>
+                                <option value="6">Medpodjetniški izobraževalni center, Cankarjeva 10, 5000 Nova Gorica
                                 </option>
-                                <option value="">Srednja ekonomska in trgovska šola, Erjavčeva ulica 8, 5000 Nova Gorica
+                                <option value="7">Srednja ekonomska in trgovska šola, Erjavčeva ulica 8, 5000 Nova Gorica
                                 </option>
                             </select>
                         </div>
                     </div>
                     <div id="letnik" class="gridContainer4">
                         <label for="">Letnik in oddelek</label>
-                        <select>
-                            <option value="">3rb</option>
+                        <select id="oddelekSelect">
+                            <option value="null">---</option>
                         </select>
                     </div>
                 </div>
@@ -126,7 +125,7 @@
                     <h2>Prijava</h2>
                 </div>
                 <div id="secondTxt">Spodaj podpisani vlagatelj prijavljam imenovanega dijaka na šolsko malico v šolskem
-                    letu 2024 - 2025 od <input type="date" name="" id=""> dalje
+                    letu 2024 - 2025 od <input type="date" name="" id="prijDate" onfocus="disablePastDates()"> dalje
                 </div>
                 <div id="box2">
                     <div>Podpis vlagatelja</div>
@@ -134,14 +133,14 @@
                     <span class="delete">Izbris</span>
                 </div>
                 <div id="izjavaWarning">
-                    <input type="checkbox" name="" id="izjavaCheck"> <label>Prebral sem <span onclick="openPopup()"
+                    <input type="checkbox" name="" id="izjavaCheck" required> <label>Prebral sem <span onclick="openPopup()"
                             class="popUpTrigger">izjavo</span> in se z njo tudi strinjam</label>
                 </div>
 
                 <div class="izjavaPopUp">
                     <div id="popUpHead">
                         <div id="popUpHeadText">Izjavljam da sem seznanjen</div>
-                        <div id="PopUpClose"><button data-close-button class="CloseButton">&times;</button></div>
+                        <div id="PopUpClose"><button data-close-button class="CloseButton" id="CloseBtn">&times;</button></div>
                     </div>
                     <div id="popUpList">
                         <ul>
@@ -195,8 +194,10 @@
             </div>
         </form>
     </div>
-    <script src="scripts/mail.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="scripts/signature.js"></script>
+    <script src="scripts/mail.js"></script>
     <script src="scripts/script.js"></script>
+    <script src="scripts/classSelector.js"></script>
 </body>
 </html>
