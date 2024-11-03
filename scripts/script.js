@@ -66,7 +66,6 @@ document.getElementById('emsoin').addEventListener("input", function (e) {
     e.target.value = value.slice(0, 13); // ohrani samo prvih 13 stevil
 });
 
-
 let masks = document.querySelectorAll(".onlyLetters")
 masks.forEach(mask => mask.addEventListener("input", function (e) {
     const value1 = e.target.value.replace(/[^a-zA-Z]/g, ''); //izbriše use številke 
@@ -104,6 +103,17 @@ function validate(event) {
     if(!checkSelections())
         allFiled = false;
 
+    if(!emsoLen()){
+        Swal.fire({
+            title: 'Napaka!',
+            text: 'Emso mora vsebovati 11 stevil!',
+            icon: 'error',
+            confirmButtonText: 'OK'
+        });
+        return;
+    }
+        
+
     if (!allFiled) {
         Swal.fire({
             title: 'Napaka!',
@@ -111,7 +121,7 @@ function validate(event) {
             icon: 'error',
             confirmButtonText: 'OK'
         })
-        return; // gre iz loopa ko dobi prvi prazen field
+        return;
     }
 
     else {
@@ -134,6 +144,13 @@ function isCanvasBlank() {
     return !canvas.getContext('2d')
         .getImageData(0, 0, canvas.width, canvas.height).data //.getImageData kopira pixel data za podan pravokotnik na canvasu
         .some(channel => channel !== 0);  //gre skozi usak channel value -> .some() vrne true če usaj en el !=0
+}
+
+function emsoLen() {
+    let emso = document.getElementById('emsoin');
+    if(emso.value.length < 13 && emso.value.length !== 0)
+        return false;
+    return true;    
 }
 
 //odstrani past dates
@@ -174,7 +191,7 @@ document.getElementById("signField").addEventListener("touchstart", function(){
 });
 
 document.getElementById("signField").addEventListener("touchend", function(){
-    window.onscroll = function(){};
+        window.onscroll = function(){};
 });
 
 

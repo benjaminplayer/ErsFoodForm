@@ -396,8 +396,6 @@ header{
     display: block;
     background: var(--luminous-vivid-amber);
     border: var(--lightBorder);
-    width: 18em;
-    height: 6em;
     border-radius: 10px;
 }
 
@@ -439,7 +437,7 @@ header{
 
 #endMyMisseryPls{
     position: relative;
-    background: var(--darkOrange);
+    background: var(--luminous-vivid-orange);
     font-family: "Noto Sans", sans-serif;
     font-size: large;
     width: 12rem;
@@ -741,7 +739,7 @@ header{
     }
 
     header{
-        width: 99vw;
+        width: 98.2vw;
         grid-template-columns: 1fr .08fr;
     }
 
@@ -777,7 +775,7 @@ header{
         margin: 0;
         border-left: none;
         border-right: none;
-        width: 99vw;
+        width: 98.2vw;
         box-sizing: border-box;
     }
 
@@ -820,6 +818,10 @@ header{
         width: 10rem;
     }
 
+    #second{
+        padding-left: .2rem ;
+    }
+
     #gridContSol.gridContainer3{
         height: 8rem;
         grid-template-rows: 1fr 1fr;
@@ -839,12 +841,20 @@ header{
         flex-direction: column;
     }
 
+    #thirdTitle{
+        padding-left: .2rem;
+    }
     #secondTxt{
         height: 7rem;
     }
 
+    #box2{
+        padding-left: .2rem;
+    }
+
     #izjavaWarning{
         height: 2rem;
+        padding-left: .2rem;
     }
 
     #popUpList{
@@ -857,4 +867,9 @@ header{
         margin: unset;
         line-height: unset;
     }
+
+    #fourth{
+        padding-left: .2rem;
+    }
+
 }
