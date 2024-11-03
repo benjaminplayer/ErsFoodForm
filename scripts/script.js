@@ -6,10 +6,11 @@ function resizeCanvas(x, y) {
     canvas.height = y;
 }
 
+// Call the function to apply media queries on page load
+applyMediaQuery();
 function applyMediaQuery() {
 
     let mediaQuery = window.matchMedia("(max-width: 725px)");
-    let hideImg = window.matchMedia("(max-width: 433px)");
     // Check if the media query matches
     if (mediaQuery.matches) {
         // Apply new canvas size for small screens
@@ -18,47 +19,6 @@ function applyMediaQuery() {
         // Apply default canvas size for larger screens
         resizeCanvas(290, 100);
     }
-
-
-    hideImg.addEventListener('change', function (e1) {
-        if (e1.matches) {
-            let headLeft = document.getElementById("headLeft");
-            let hedRight = document.getElementById("headRight");
-
-            headLeft.remove();
-            hedRight.remove();
-        } else {
-
-            // remove center in pole append -> left, center
-            // right
-            // popravi header pri smaller sizes, tako da odstrani stranska diva
-
-            let header = document.getElementById("header");
-            let hedCenter = document.getElementById("headCenter");
-            let h1 = document.createElement("h1");
-            hedCenter.remove();
-            hedCenter = document.createElement("div");
-            let headLeft = document.createElement("div");
-            let headRight = document.createElement("div");
-            let image = document.createElement("img");
-            image.src = "Img/SCNG-Color.svg";
-            image.alt = "Image";
-            headLeft.id = "headLeft";
-            headRight.id = "headRight";
-            hedCenter.id = "headCenter";
-            h1.textContent = "Prijava na šolsko prehrano";
-
-
-            header.appendChild(headLeft);
-            header.appendChild(hedCenter);
-            header.appendChild(headRight);
-            headLeft.appendChild(image);
-            hedCenter.appendChild(h1);
-        }
-    });
-
-
-
     // Listen for media query changes
     mediaQuery.addEventListener('change', function (e) {
         if (e.matches) {
@@ -68,8 +28,6 @@ function applyMediaQuery() {
         }
     });
 }
-// Call the function to apply media queries on page load
-applyMediaQuery();
 
 //Popup code
 const closeModalButton = document.querySelectorAll('[data-close-button]');
@@ -205,3 +163,45 @@ function checkSelections() {
     }
     return true;
 }
+
+document.getElementById("signField").addEventListener("touchstart", function(){
+    var x=window.scrollX;
+    var y=window.scrollY;
+    window.onscroll=function(){
+        console.log("here");
+        window.scrollTo(x, y);
+    };    
+});
+
+document.getElementById("signField").addEventListener("touchend", function(){
+    window.onscroll = function(){};
+});
+
+
+//darkmode
+
+let darkmode = localStorage.getItem('darkMode'); //pogleda ali je darkmode stored localy
+const themeSwitch = document.querySelector('.themeSwitch');
+console.log(themeSwitch)
+
+const enableDarkMode = () => {
+    document.body.classList.add('darkMode');
+    localStorage.setItem('darkMode', 'active');
+    let image = document.getElementById("logo");
+    console.log(image);
+        image.src = "Img/SCNG-ColorDark.svg";
+}
+
+const disableDarkMode = () => {
+    document.body.classList.remove('darkMode');
+    localStorage.setItem('darkMode', null);
+    let image = document.getElementById("logo");
+    image.src = "Img/SCNG-Color.svg";
+}
+
+if(darkmode === "active") enableDarkMode();
+
+themeSwitch.addEventListener("click", () => {
+    darkmode = localStorage.getItem('darkMode');
+    darkmode !== "active" ? enableDarkMode() : disableDarkMode(); // if(condition) true : false
+});
