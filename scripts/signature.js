@@ -2,6 +2,7 @@ const canvas = document.querySelector('canvas');
 const form = document.querySelector('.mainForm');
 const clear = document.querySelector('.delete')
 const ctx = canvas.getContext('2d');
+const body = document.getElementsByTagName('body');
 
 let writingMode = false;
 
@@ -25,12 +26,20 @@ const getTargetPosition = (event) => {
 
 }
 
+//fix da ko je darkmode piše z belo
+
 const handlePointerMove = (event) => {
     if(!writingMode) return
 
     const [posX, posY] = getTargetPosition(event);
     ctx.lineTo(posX,posY);
     ctx.stroke();
+    if(body.classList.contains(".darkmode"))
+        ctx.strokeStyle = "white";
+    else
+        ctx.strokeStyle = "black";
+
+
 }
 
 const handlePointerUp = () => {

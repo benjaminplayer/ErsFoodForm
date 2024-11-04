@@ -10,6 +10,9 @@
     --defaultFont: "Noto Sans", sans-serif;
     --bodyColor: #ffffff;
     --closeButtonColor: #000000;
+    --signaturePadColor: unset;
+    --inputColor: unset;
+    --inTextCol: initial;
 /* Color Theme Swatches in HSLA */
 
     --darkOrange: hsl(7, 75%, 42%); 
@@ -25,7 +28,7 @@
     --luminous-vivid-orange: #ff6900;
 
     --luminous-vivid-amber: #fcb900;
-
+    
     --light-green-cyan: #7bdcb5;
 
     --vivid-green-cyan: #00d084;
@@ -49,12 +52,16 @@
 
 .darkMode{
 
-    --defWhite: #121212;
+    --defWhite: #292828;
     --font-color: #ffffff;
     --gray-ish:#eeeff0;
     --black: #ffffff;
-    --bodyColor: #0d0d0d;
+    /*--bodyColor: #0d0d0d; rezerva*/
+    --bodyColor:#121212;
     --closeButtonColor: #ffffff;
+    --signaturePadColor: #444444f2;
+    --inputColor: #444444f2;
+    --inTextCol: #ffffff;
 }
 
 html, body{
@@ -71,6 +78,8 @@ body{
 
 input{
     font: var(--defaultFont);
+    background: var(--inputColor);
+    color: var(--inTextCol);
 }
 
 header{
@@ -394,8 +403,8 @@ header{
 
 #box2 canvas{
     display: block;
-    background: var(--luminous-vivid-amber);
-    border: var(--lightBorder);
+    background: var(--signaturePadColor);
+    border: 2px solid;
     border-radius: 10px;
 }
 
@@ -437,7 +446,8 @@ header{
 
 #endMyMisseryPls{
     position: relative;
-    background: var(--luminous-vivid-orange);
+    cursor: pointer;
+    background: var(--pale-pink);
     font-family: "Noto Sans", sans-serif;
     font-size: large;
     width: 12rem;
@@ -448,13 +458,13 @@ header{
     transition: ease .05s;
 }
 
-#endMyMisseryPls:hover{
+/*#endMyMisseryPls:hover{
     border: 2px var(--flamingOrange) solid;
     width: 12.6rem;
     height: 3.6rem;
     font-size: 1.2rem;
     transition: ease .05s;
-}
+}*/
 
 /* TODO: Fix media queries */
 
