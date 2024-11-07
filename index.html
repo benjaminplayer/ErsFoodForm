@@ -21,8 +21,8 @@
         </div>
         <div id="headRight">
             <button class="themeSwitch">
-                <svg id="dark"xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
-                <svg id="light"xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
+                <svg id="dark" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Z"/></svg>
+                <svg id="light" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="M480-280q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Z"/></svg>
             </button>
         </div>
 
@@ -30,7 +30,7 @@
     </header>
 
     <div class="main">
-        <form action="" method="post" class="mainForm" id="mainFormus" novalidate onsubmit="validate(event)">
+        <form action="_blank" method="post" class="mainForm" id="mainFormus" novalidate onsubmit="validate(event)">
             <div id="first">
                 <div id="dataText">
                     <h2>PODATKI O VLAGATELJU</h2>
@@ -47,8 +47,8 @@
                 </div>
                 <div class="gridContainer1" id="gridContMedia">
                     <div id="naslov">
-                        <label for="">Naslov</label>
-                        <input type="text" placeholder="Cankarjeva 10, Nova Gorica" required>
+                        <label for="naslovIn">Naslov</label>
+                        <input type="text" placeholder="Cankarjeva 10, Nova Gorica" id="naslovIn" required>
                     </div>
                     <div id="radio">
                         <input type="radio" name="rad" id="M" required>
@@ -75,11 +75,11 @@
                 <div class="gridContainer2" id="gridContDij">
                     <div id="emso">
                         <label for="emsoin">EMŠO</label>
-                        <input type="text" name="" id="emsoin" placeholder="0000000505000" required>
+                        <input type="text" id="emsoin" placeholder="0000000505000" required>
                     </div>
                     <div id="naslovDij">
-                        <label for="">Naslov</label>
-                        <input type="text" placeholder="Cankarjeva 10, Nova Gorica" required>
+                        <label for="naslovDijIn">Naslov</label>
+                        <input type="text" id="naslovDijIn" placeholder="Cankarjeva 10, Nova Gorica" required>
                     </div>
                 </div>
 
@@ -92,11 +92,11 @@
                 </div>
                 <div class="gridContainer3" id="gridContSol">
                     <div class="gridContainer4" id="gridSolaSel">
-                        <div>
+                        <div id="soleRightDiv">
                             <label for="sole">Ime in sedež šole</label>
                         </div>
                         <div id="selection">
-                            <select name="" id="sole">
+                            <select name="SolaSel" id="sole">
                                 <option value="0">Izberi Šolo</option>
                                 <option value="1">Elektrothehniška in računalniška šola, Cankarjeva 10, 5000 Nova Gorica
                                 </option>
@@ -114,7 +114,7 @@
                         </div>
                     </div>
                     <div id="letnik" class="gridContainer4">
-                        <label for="">Letnik in oddelek</label>
+                        <label for="oddelekSelect">Letnik in oddelek</label>
                         <select id="oddelekSelect">
                             <option value="null">---</option>
                         </select>
@@ -128,7 +128,7 @@
                     <h2>Prijava</h2>
                 </div>
                 <div id="secondTxt">Spodaj podpisani vlagatelj prijavljam imenovanega dijaka na šolsko malico v šolskem
-                    letu 2024 - 2025 od <input type="date" name="" id="prijDate" onfocus="disablePastDates()"> dalje
+                    letu 2024 - 2025 od <input type="date" id="prijDate" onfocus="disablePastDates()"> dalje
                 </div>
                 <div id="box2">
                     <div>Podpis vlagatelja</div>
@@ -136,7 +136,7 @@
                     <span class="delete">Izbris</span>
                 </div>
                 <div id="izjavaWarning">
-                    <input type="checkbox" name="" id="izjavaCheck" required> <label>Prebral sem <span onclick="openPopup()"
+                    <input type="checkbox" id="izjavaCheck" required> <label>Prebral sem <span onclick="openPopup()"
                             class="popUpTrigger">izjavo</span> in se z njo tudi strinjam</label>
                 </div>
 

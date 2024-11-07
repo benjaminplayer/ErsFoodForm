@@ -11,8 +11,13 @@
     --bodyColor: #ffffff;
     --closeButtonColor: #000000;
     --signaturePadColor: unset;
-    --inputColor: unset;
+    --inputColor: initial;
     --inTextCol: initial;
+    --borderColor: grey;
+    --grayScale: unset;
+    --borderSubmit: none;
+    --colorSubmit: var(--luminous-vivid-orange);
+
 /* Color Theme Swatches in HSLA */
 
     --darkOrange: hsl(7, 75%, 42%); 
@@ -62,6 +67,10 @@
     --signaturePadColor: #444444f2;
     --inputColor: #444444f2;
     --inTextCol: #ffffff;
+    --borderColor: #ffffff;
+    --grayScale: grayscale(1);
+    --borderSubmit: 2px solid #1f1f1f;
+    --colorSubmit: #cc5600;
 }
 
 html, body{
@@ -80,6 +89,13 @@ input{
     font: var(--defaultFont);
     background: var(--inputColor);
     color: var(--inTextCol);
+    border: 1px solid var(--borderColor);
+    border-radius: 5px;
+    padding-left: .2rem;
+}
+
+input[type="radio"], select, input[type="checkbox"], label{
+    cursor: pointer;
 }
 
 header{
@@ -98,6 +114,7 @@ header{
 
 #headLeft img{
     width: 260px;
+    filter: var(--grayScale);
 }
 
 #headCenter{
@@ -198,6 +215,10 @@ header{
     align-self: center;
 }
 
+#radio label{
+    cursor: pointer;
+}
+
 #imeinsed{
     width: 100%;
     height: 4rem;
@@ -232,10 +253,6 @@ header{
 }
 
 #emso{
-    width: 100%;
-}
-
-#emso{
     width: 12rem;
 }
 
@@ -259,8 +276,17 @@ header{
     height: 6rem;
 }
 
+#soleRightDiv{
+    align-self: end;
+}
+
 #selection select, #selection select option{
+    padding-left: .2rem;
     font-family: var(--defaultFont);
+    color: var(--inTextCol);
+    background: var(--inputColor);
+    border-radius: 5px;
+    border: 1px solid var(--borderColor);
     font-size: .9rem;
     height: 1.6rem;
 }
@@ -274,8 +300,12 @@ header{
 }
 
 #letnik select, #letnik select option{
+    padding-left: .2rem;
     font-family: var(--defaultFont);
-    font-size: .9rem;
+    color: var(--inTextCol);
+    background: var(--inputColor);
+    border-radius: 5px;
+    border: 1px solid var(--borderColor);
     height: 1.6rem;
     width: 4rem;
 }
@@ -444,27 +474,28 @@ header{
     line-height: 3rem;
 }
 
+
 #endMyMisseryPls{
+    transition: ease-in-out 200ms;
     position: relative;
     cursor: pointer;
-    background: var(--pale-pink);
+    background: var(--colorSubmit);
+    border: var(--borderSubmit);
     font-family: "Noto Sans", sans-serif;
     font-size: large;
     width: 12rem;
     height: 3rem;
+    line-height: 1rem;
     border-radius: 10px;
     outline: none;
-    border: none;
     transition: ease .05s;
 }
 
-/*#endMyMisseryPls:hover{
-    border: 2px var(--flamingOrange) solid;
-    width: 12.6rem;
-    height: 3.6rem;
-    font-size: 1.2rem;
-    transition: ease .05s;
-}*/
+.darkMode #endMyMisseryPls:hover {
+    background: #e07a00;
+    box-shadow: 0px 4px 10px rgba(255, 105, 0, 0.5); /* Glow on hover */
+    transition: ease-in-out 200ms;
+}
 
 /* TODO: Fix media queries */
 
@@ -676,6 +707,9 @@ header{
         min-height: 11rem;
     }
 
+    #gridContDij #emsoin{
+        width: 4.7rem;
+    }
     /*naredi canvas da dela z scale*/
 }
 
@@ -824,8 +858,16 @@ header{
         margin-top: 1rem;
     }
 
+    #gridContDij.gridContainer2{
+        height: 8rem;
+    }
+
     #emso{
         width: 10rem;
+    }
+
+    #gridContDij #emsoin{
+        width: 90%;
     }
 
     #second{
@@ -863,7 +905,7 @@ header{
     }
 
     #izjavaWarning{
-        height: 2rem;
+        height: 3rem;
         padding-left: .2rem;
     }
 
