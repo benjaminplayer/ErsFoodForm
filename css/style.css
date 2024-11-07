@@ -276,10 +276,6 @@ header{
     height: 6rem;
 }
 
-#soleRightDiv{
-    align-self: end;
-}
-
 #selection select, #selection select option{
     padding-left: .2rem;
     font-family: var(--defaultFont);
@@ -538,6 +534,10 @@ header{
         height: 100%;
         width: 40rem;
         transition: ease 100ms;
+    }
+
+    #soleRightDiv{
+        align-self: end;
     }
 
 }
