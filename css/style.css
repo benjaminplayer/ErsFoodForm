@@ -17,6 +17,8 @@
     --grayScale: unset;
     --borderSubmit: 2px solid #f0c2d7;
     --colorSubmit: #E8ADBE;
+    --themeButtonBg: unset;
+    --themeButtonBor: 1px solid lightgray;
 
 /* Color Theme Swatches in HSLA */
 
@@ -28,7 +30,7 @@
 
     --pale-pink: #f78da7;
 
-    --vivid-red: #cf2e2e;
+    --vivid-red: #EF5041;
 
     --luminous-vivid-orange: #ff6900;
 
@@ -40,7 +42,7 @@
 
     --pale-cyan-blue: #8ed1fc;
 
-    --vivid-cyan-blue: #0693e3;
+    --vivid-cyan-blue: #1F59A7;
 
     --vivid-purple: #9b51e0;
 
@@ -71,6 +73,8 @@
     --grayScale: grayscale(1);
     --borderSubmit: 2px solid #1f1f1f;
     --colorSubmit: #cc5600;
+    --themeButtonBg: #444444f2;
+    --themeButtonBor: unset;
 }
 
 html, body{
@@ -129,6 +133,9 @@ header{
 }
 
 .themeSwitch{
+    cursor: pointer;
+    background: var(--themeButtonBg);
+    border: var(--themeButtonBor);
     height: 48px;
     width: 48px;
     border-radius: 50%;
@@ -145,10 +152,10 @@ header{
     height: 24px;
 }
 
-
 .darkMode .themeSwitch svg:last-child{
     display: block;
     margin: 0 auto;
+    fill: #ffff;
     width: 24px;
     height: 24px;
 }
@@ -490,12 +497,13 @@ header{
     line-height: 1rem;
     border-radius: 10px;
     outline: none;
-    transition: all ease .05s;
+    
 }
 
 #endMyMisseryPls:hover{
     background-color: #d37a91;   /* Slightly darker shade on hover */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+    transition: ease-in-out 200ms;
 }
 
 .darkMode #endMyMisseryPls:hover {
