@@ -15,8 +15,8 @@
     --inTextCol: initial;
     --borderColor: grey;
     --grayScale: unset;
-    --borderSubmit: none;
-    --colorSubmit: var(--luminous-vivid-orange);
+    --borderSubmit: 2px solid #f0c2d7;
+    --colorSubmit: #E8ADBE;
 
 /* Color Theme Swatches in HSLA */
 
@@ -157,10 +157,10 @@ header{
 .main{
     background: var(--defWhite);
     border: var(--lightBorder);
+    border-radius: 10px;
     min-height: max-content;
-    margin-top: .5rem;
     width: 66rem;
-    margin: 0 auto 1rem auto;
+    margin: .3rem auto;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
@@ -362,11 +362,12 @@ header{
 }
 
 #popUpList ul{
-    list-style: inside "- ";
-    padding: 0 .5rem;
+    list-style: "- ";
+    padding: 0 1rem;
 }
 
 #izjava{
+    font-style: italic;
     padding: .5rem .5rem;
     height: 4rem;
     margin-top: .5rem;
@@ -445,7 +446,6 @@ header{
 
 #fourth{
     min-height: 13rem;
-    list-style: inside;
 }
 
 #forhead{
@@ -459,12 +459,17 @@ header{
     padding: .5rem var(--paddingLeft) 0 var(--paddingLeft);
 }
 
+#foText ol{
+    margin: 0 0 0 1rem;
+}
+
 #foText ol li{
     padding-bottom:.5rem;
 }
 
 #fifth{
     /*border: var(--defBorder);*/
+    margin-bottom: 1.5rem;
     text-align: center;
     height: 3rem;
     line-height: 3rem;
@@ -477,6 +482,7 @@ header{
     cursor: pointer;
     background: var(--colorSubmit);
     border: var(--borderSubmit);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     font-family: "Noto Sans", sans-serif;
     font-size: large;
     width: 12rem;
@@ -484,7 +490,12 @@ header{
     line-height: 1rem;
     border-radius: 10px;
     outline: none;
-    transition: ease .05s;
+    transition: all ease .05s;
+}
+
+#endMyMisseryPls:hover{
+    background-color: #d37a91;   /* Slightly darker shade on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
 }
 
 .darkMode #endMyMisseryPls:hover {
@@ -710,7 +721,6 @@ header{
     #gridContDij #emsoin{
         width: 4.7rem;
     }
-    /*naredi canvas da dela z scale*/
 }
 
 @media(max-width: 560px){

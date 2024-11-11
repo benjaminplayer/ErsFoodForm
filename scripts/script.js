@@ -94,8 +94,17 @@ function validate(event) {
         }
     });
 
-    if (isCanvasBlank())
+    if (isCanvasBlank()){
         allFiled = false;
+            Swal.fire({
+                title: 'Napaka!',
+                text: 'Podpis je obvezen vnos!',
+                icon: 'error',
+                confirmButtonText: 'OK'
+            });
+            return;
+    }
+        
     if (!document.getElementById("izjavaCheck").checked) {
         allFiled = false;
     }
@@ -126,8 +135,7 @@ function validate(event) {
 
     else {
         Swal.fire({
-            title: 'Uspeh!',
-            text: 'Registracija je bila uspešno oddana!',
+            title: 'Prijava je bila uspešno oddana!',
             icon: 'success'
         }).then((result) => {
             if (result.isConfirmed) { //pošlje podatke po tem ko user klikne OK
@@ -222,3 +230,10 @@ themeSwitch.addEventListener("click", () => {
     darkmode = localStorage.getItem('darkMode');
     darkmode !== "active" ? enableDarkMode() : disableDarkMode(); // if(condition) true : false
 });
+
+
+/*
+    Daj sweetalerts na use
+    change colors od gumbu
+    omeji lengths od inputs
+*/
