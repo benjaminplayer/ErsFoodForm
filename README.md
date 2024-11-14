@@ -26,5 +26,5 @@ Spletni obrazec za prijavo na šolsko malico Šolskega centra Nova Gorica.
 
 ## Avtor
 
-- [@BenjaminB](https://www.github.com/benjamin_player)
+- [@Benjamin Biščak](https://www.github.com/benjaminplayer)
 
