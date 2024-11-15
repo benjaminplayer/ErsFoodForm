@@ -68,7 +68,7 @@ document.getElementById('emsoin').addEventListener("input", function (e) {
 
 document.querySelectorAll('input[type="text"]').forEach(input => { //vsakemu elementu tipa input text doda event listener, ki kliče funkcijo z eventom e
     input.addEventListener('input', (e) => {
-        e.target.value = e.target.value.slice(0,30); //omeji na max 30 characters input na vseh poljih
+        e.target.value = e.target.value.slice(0, 30); //omeji na max 30 characters input na vseh poljih
     });
 });
 
@@ -92,22 +92,21 @@ document
 function validate(event) {
     event.preventDefault(); // prepreči submit
     const requiredFields = document.querySelectorAll("#mainFormus [required]");
-    let arr = ["ime vlagatelja", "priimkek vlagatelja","naslov vlagatelja","vlogo vlagatelja"," ime dijaka", "priimek dijaka","emso dijaka","naslov dijaka"];
-
+    let arr = ["ime vlagatelja", "priimkek vlagatelja", "naslov vlagatelja", "vlogo vlagatelja", " ime dijaka", "priimek dijaka", "emso dijaka", "naslov dijaka"];
     // gre z loopom skozi vsa obvezna polja, ter iz zgornje tabele vstavi ustrezno obliko zapisa v alert
-    for(let i = 0; i < arr.length; i++){
+    for (let i = 0; i < arr.length; i++) {
         console.log(requiredFields[i]);
-        if(i === 3 && !cehckRadio()){
-                Swal.fire({
-                    title: 'Napaka!',
-                    text: 'Prosimo izberite '+ arr[i],
-                    icon: 'error',
-                    iconColor: '#EF5041',
-                    confirmButtonText: 'OK',
-                    confirmButtonColor: '#EF5041'
-                });
-                return;
-        }else if(!requiredFields[i].value.trim()){
+        if (i === 3 && !cehckRadio()) {
+            Swal.fire({
+                title: 'Napaka!',
+                text: 'Prosimo izberite ' + arr[i],
+                icon: 'error',
+                iconColor: '#EF5041',
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#EF5041'
+            });
+            return;
+        } else if (!requiredFields[i].value.trim()) {
             Swal.fire({
                 title: 'Napaka!',
                 text: 'Prosimo vnesite ' + arr[i],
@@ -120,10 +119,10 @@ function validate(event) {
         }
     }
 
-    if(!checkSelections())
+    if (!checkSelections())
         return;
 
-    if(!document.getElementById("prijDate").value){ //če datum nima vrednosti je vrednost "" -> "" pomeni false
+    if (!document.getElementById("prijDate").value) { //če datum nima vrednosti je vrednost "" -> "" pomeni false
         Swal.fire({
             title: 'Napaka!',
             text: 'Prosimo vnesite datum veljavnosti',
@@ -133,19 +132,19 @@ function validate(event) {
             confirmButtonText: 'OK'
         });
         return;
-    } 
-    if (isCanvasBlank()){
-            Swal.fire({
-                title: 'Napaka!',
-                text: 'Podpis je obvezen vnos!',
-                icon: 'error',
-                iconColor: '#EF5041',
-                confirmButtonColor: '#EF5041',
-                confirmButtonText: 'OK'
-            });
-            return;
     }
-        
+    if (isCanvasBlank()) {
+        Swal.fire({
+            title: 'Napaka!',
+            text: 'Podpis je obvezen vnos!',
+            icon: 'error',
+            iconColor: '#EF5041',
+            confirmButtonColor: '#EF5041',
+            confirmButtonText: 'OK'
+        });
+        return;
+    }
+
     if (!document.getElementById("izjavaCheck").checked) {
         Swal.fire({
             title: 'Napaka!',
@@ -158,7 +157,7 @@ function validate(event) {
         return;
     }
 
-    if(!emsoLen()){
+    if (!emsoLen()) {
         Swal.fire({
             title: 'Napaka!',
             text: 'Emso mora vsebovati 11 stevil!',
@@ -169,7 +168,7 @@ function validate(event) {
         });
         return;
     }
-        
+
     Swal.fire({
         title: 'Prijava je bila uspešno oddana!',
         icon: 'success',
@@ -182,7 +181,7 @@ function validate(event) {
             clearPad();
         }
     });
-    
+
 }
 
 // preveri ali so usi barvni kanali v vsakem pixlu blank (0)
@@ -195,9 +194,9 @@ function isCanvasBlank() {
 
 function emsoLen() {
     let emso = document.getElementById('emsoin');
-    if(emso.value.length < 13 && emso.value.length !== 0)
+    if (emso.value.length < 13 && emso.value.length !== 0)
         return false;
-    return true;    
+    return true;
 }
 //odstrani past dates
 
@@ -214,7 +213,7 @@ function disablePastDates() {
 function checkSelections() {
     let select = document.getElementById("sole");
     let select2 = document.getElementById("oddelekSelect");
-    if(select.value == 0){
+    if (select.value == 0) {
         console.log("doc1 false")
         Swal.fire({
             title: 'Napaka!',
@@ -226,8 +225,8 @@ function checkSelections() {
         });
         return false;
     }
-        
-    if(select2.value == "null"){
+
+    if (select2.value == "null") {
         console.log("doc2 false")
         Swal.fire({
             title: 'Napaka!',
@@ -243,26 +242,25 @@ function checkSelections() {
     return true;
 }
 
-function cehckRadio(){
-   let radios = document.getElementsByClassName('radios');
-   let empty = 0; 
-   for (let i = 0; i < radios.length; i++)
-        if(radios[i].checked)
+function cehckRadio() {
+    let radios = document.getElementsByClassName('radios');
+    for (let i = 0; i < radios.length; i++)
+        if (radios[i].checked)
             return true;
     return false;
 }
 
-document.getElementById("signField").addEventListener("touchstart", function(){
-    var x=window.scrollX;
-    var y=window.scrollY;
-    window.onscroll=function(){
+document.getElementById("signField").addEventListener("touchstart", function () {
+    var x = window.scrollX;
+    var y = window.scrollY;
+    window.onscroll = function () {
         console.log("here");
         window.scrollTo(x, y);
-    };    
+    };
 });
 
-document.getElementById("signField").addEventListener("touchend", function(){
-        window.onscroll = function(){};
+document.getElementById("signField").addEventListener("touchend", function () {
+    window.onscroll = function () { };
 });
 
 
@@ -277,7 +275,7 @@ const enableDarkMode = () => {
     localStorage.setItem('darkMode', 'active');
     let image = document.getElementById("logo");
     console.log(image);
-        image.src = "Img/SCNG-ColorDark.svg";
+    image.src = "Img/SCNG-ColorDark.svg";
 }
 
 const disableDarkMode = () => {
@@ -287,7 +285,7 @@ const disableDarkMode = () => {
     image.src = "Img/SCNG-Color.svg";
 }
 
-if(darkmode === "active") enableDarkMode();
+if (darkmode === "active") enableDarkMode();
 
 themeSwitch.addEventListener("click", () => {
     darkmode = localStorage.getItem('darkMode');
@@ -300,3 +298,24 @@ themeSwitch.addEventListener("click", () => {
     change colors od gumbu 
     omeji lengths od inputs -Done
 */
+
+
+//secret
+window.onload = () =>{
+    let clicks = 0;
+    document.getElementById('headCenter').addEventListener('click', function(){
+        clicks++;
+        if(clicks === 5){
+            clicks = 0;
+            Swal.fire({
+                title: 'About',
+                text: 'Naredil: Benjamin Biščak 4.RB',
+                icon: 'info',
+                iconColor: '#1F59A7',
+                confirmButtonText: 'Nadaljuj',
+                confirmButtonColor: '#49BA86'
+            });
+            return;
+        }
+    });
+}

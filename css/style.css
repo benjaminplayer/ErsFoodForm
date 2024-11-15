@@ -19,6 +19,7 @@
     --colorSubmit: #E8ADBE;
     --themeButtonBg: unset;
     --themeButtonBor: 1px solid lightgray;
+    --footerBg: #eeeff0;
 
 /* Color Theme Swatches in HSLA */
 
@@ -75,6 +76,7 @@
     --colorSubmit: #cc5600;
     --themeButtonBg: #444444f2;
     --themeButtonBor: unset;
+    --footerBg: #444444f2;
 }
 
 html, body{
@@ -122,6 +124,7 @@ header{
 }
 
 #headCenter{
+    cursor: default;
     align-self: center;
     justify-self: center;
 }
@@ -167,7 +170,7 @@ header{
     border-radius: 10px;
     min-height: max-content;
     width: 66rem;
-    margin: .3rem auto;
+    margin: .5rem auto;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
@@ -184,7 +187,7 @@ header{
 
 #first{
     width: 100%;
-    min-height: 24rem;
+    min-height: 20rem;
 }
 
 .gridContainer1, .gridContainer2{
@@ -318,6 +321,7 @@ header{
 }
 
 #secondTxt{
+    cursor: default;
     height: 4rem;
     padding-left: var(--paddingLeft);
 }
@@ -456,6 +460,7 @@ header{
 }
 
 #forhead{
+    cursor: default;
     height: 2rem;
     line-height: 2rem;
     font-weight: bold;
@@ -467,6 +472,7 @@ header{
 }
 
 #foText ol{
+    cursor:default;
     margin: 0 0 0 1rem;
 }
 
@@ -510,6 +516,31 @@ header{
     background: #e07a00;
     box-shadow: 0px 4px 10px rgba(255, 105, 0, 0.5); /* Glow on hover */
     transition: ease-in-out 200ms;
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: .7rem;
+    font-weight: bold;
+    background-color: var(--footerBg);
+    border-top: 1px solid var(--lightBorder);
+    width: 100%;
+    height: 2rem;
+}
+
+footer #fleft{
+    margin-left: 1rem;
+}
+
+footer #fright{
+    margin-right: 1rem;
+}
+
+footer #fright a{
+    color: var(--font-color);
+    text-decoration: none;
 }
 
 /* TODO: Fix media queries */
