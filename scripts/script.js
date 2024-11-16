@@ -34,7 +34,6 @@ const closeModalButton = document.querySelectorAll('[data-close-button]');
 const overlay = document.getElementById('overlay');
 const modal = document.querySelector('.izjavaPopUp');
 
-
 //event listener za close button v popupu
 closeModalButton.forEach(button => {
     button.addEventListener('click', () => {
@@ -44,10 +43,7 @@ closeModalButton.forEach(button => {
 });
 
 function openPopup() {
-    if (modal == null) {
-        console.log("here");
-        return;
-    }
+    if (modal == null) return;
     modal.classList.add('active'); // doda class .active
     overlay.classList.add('active');
 }

@@ -15,8 +15,8 @@
     --inTextCol: initial;
     --borderColor: grey;
     --grayScale: unset;
-    --borderSubmit: 2px solid #f0c2d7;
-    --colorSubmit: #E8ADBE;
+    --borderSubmit: 2px solid #e0e0e0;
+    --colorSubmit: #dfdfdf;
     --themeButtonBg: unset;
     --themeButtonBor: 1px solid lightgray;
     --footerBg: #eeeff0;
@@ -162,7 +162,6 @@ header{
     width: 24px;
     height: 24px;
 }
-
 
 .main{
     background: var(--defWhite);
@@ -489,11 +488,11 @@ header{
 }
 
 
-#endMyMisseryPls{
+#submitButton{
     transition: ease-in-out 200ms;
-    position: relative;
     cursor: pointer;
     background: var(--colorSubmit);
+    /*background: #dfdfdf;*/
     border: var(--borderSubmit);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     font-family: "Noto Sans", sans-serif;
@@ -506,13 +505,13 @@ header{
     
 }
 
-#endMyMisseryPls:hover{
-    background-color: #d37a91;   /* Slightly darker shade on hover */
+#submitButton:hover{
+    background-color: #ffffff;   /* Slightly darker shade on hover */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
     transition: ease-in-out 200ms;
 }
 
-.darkMode #endMyMisseryPls:hover {
+.darkMode #submitButton:hover {
     background: #e07a00;
     box-shadow: 0px 4px 10px rgba(255, 105, 0, 0.5); /* Glow on hover */
     transition: ease-in-out 200ms;
@@ -569,9 +568,8 @@ footer #fright a{
 
     .main{
         min-height: max-content;
-        margin-top: .5rem;
         width: 50rem;
-        margin: 0 auto;  
+        margin: .5rem auto;  
         transition: ease 100ms;
     }
     
@@ -760,6 +758,11 @@ footer #fright a{
     #gridContDij #emsoin{
         width: 4.7rem;
     }
+
+    footer{
+        font-size: .5rem;
+    }
+
 }
 
 @media(max-width: 560px){
@@ -865,7 +868,7 @@ footer #fright a{
     }
 
     .main{
-        margin: 0;
+        margin: .5rem 0;
         border-left: none;
         border-right: none;
         width: 98.2vw;
@@ -971,6 +974,11 @@ footer #fright a{
 
     #fourth{
         padding-left: .2rem;
+    }
+
+    footer{
+        height: 1rem;
+        font-size: .3rem
     }
 
 }
