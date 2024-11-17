@@ -19,9 +19,10 @@ Spletni obrazec za prijavo na šolsko malico Šolskega centra Nova Gorica.
 
 ## Screenshots
 
-![SiteLight](https://github.com/user-attachments/assets/8d9a0e7d-c4a2-4bb4-ab3e-68416330aff1)
-![SiteDark](https://github.com/user-attachments/assets/d997f95c-843a-4adf-b1c4-ac825e7e0806)
-![SiteAlert](https://github.com/user-attachments/assets/e72768b0-12df-4cd8-99a1-5c44c9e66d07)
+![SiteLight](https://github.com/user-attachments/assets/4f2081b2-cb78-43a3-932e-6a75e03e4fd0)
+![SiteDark](https://github.com/user-attachments/assets/a7d9e128-b31a-49a5-9f6c-9a7a3f992224)
+![SiteAlert](https://github.com/user-attachments/assets/88df6019-d136-4a4b-a123-452beeb3679d)
+
 ![SiteSignatureFiled](https://github.com/user-attachments/assets/2b0c1832-2904-4841-8326-77bb20582153)
 
 ## Avtor
