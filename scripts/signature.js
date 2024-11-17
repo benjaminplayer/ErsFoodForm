@@ -4,8 +4,6 @@ const clear = document.querySelector('.delete')
 const ctx = canvas.getContext('2d');
 const body = document.getElementsByTagName('body');
 
-
-
 let writingMode = false;
 const coordinates = [];
 
@@ -32,17 +30,26 @@ const getTargetPosition = (event) => {
 
 //fix da ko je darkmode piše z belo
 
-const switcher = document.querySelector(".themeSwitch").addEventListener("click", function(){
-    if(body[0].classList.contains("darkMode")){
+document.addEventListener('DOMContentLoaded', () =>{ //Preveri ali je on page load dark mode in popravi barvo podpisa accordingly
+    if(document.getElementsByTagName("body")[0].classList.contains(darkmode)){
         ctx.strokeStyle = "black";
-        redraw();
-    }
-    else{
+            redraw();
+    } else{
         ctx.strokeStyle = "white";
         redraw();
     }
-    });
+});
 
+    const switcher = document.querySelector(".themeSwitch").addEventListener("click", function(){
+        if(body[0].classList.contains("darkMode")){
+            ctx.strokeStyle = "black";
+            redraw();
+        }
+        else{
+            ctx.strokeStyle = "white";
+            redraw();
+        }
+        });
 
 const handlePointerMove = (event) => {
     if(!writingMode) return

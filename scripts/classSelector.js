@@ -1,10 +1,9 @@
 const select2 = document.getElementById("oddelekSelect");
-const select = document.getElementById("sole").addEventListener("change", function(){
-
-
-    console.log(this.value);
-
-    switch (parseInt(this.value)) {
+const select = document.getElementById("sole").addEventListener("change", check);
+document.addEventListener("DOMContentLoaded",  check);
+function check(){
+    console.log(document.getElementById("sole").value);
+    switch (parseInt(document.getElementById("sole").value)) {
         case 1:
             console.log("here");
             removeAllChildElements(select2);
@@ -82,7 +81,8 @@ const select = document.getElementById("sole").addEventListener("change", functi
             break;
     }
 
-});
+}
+
 
 
 function removeAllChildElements(parrent){

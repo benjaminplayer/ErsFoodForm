@@ -3,7 +3,7 @@
 :root{
     --paddingLeft: .3rem;
     --linkUnderlineTrnasition: width .2s;
-    --defBorder: 2px var(--luminous-vivid-amber) solid;;
+    --defBorder: 2px var(--pale-cyan-blue) solid;
     --defWhite : #ffffff;
     --lightBorder: .5px #eeeff0 solid;
     --borderSmol: 1.5px solid;
@@ -73,7 +73,8 @@
     --borderColor: #ffffff;
     --grayScale: grayscale(1);
     --borderSubmit: 2px solid #1f1f1f;
-    --colorSubmit: #cc5600;
+    /*--colorSubmit: #cc5600;*/
+    --colorSubmit: #626262;
     --themeButtonBg: #444444f2;
     --themeButtonBor: unset;
     --footerBg: #444444f2;
@@ -386,8 +387,8 @@ header{
 
 #izjavaWarning span{
     cursor: pointer;
-    color: var(--luminous-vivid-orange);
-    text-decoration: underline 2px var(--luminous-vivid-orange);
+    color: var(--vivid-cyan-blue);
+    text-decoration: underline 2px var(--vivid-cyan-blue);
 }
 
 #overlay{
@@ -509,12 +510,14 @@ header{
     background-color: #ffffff;   /* Slightly darker shade on hover */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
     transition: ease-in-out 200ms;
+    transform: scale(1.05);
 }
 
 .darkMode #submitButton:hover {
-    background: #e07a00;
-    box-shadow: 0px 4px 10px rgba(255, 105, 0, 0.5); /* Glow on hover */
+    background-color: #505050;
+    box-shadow: 0px 4px 10px rgba(124, 116, 98, 0.5); /* Glow on hover */
     transition: ease-in-out 200ms;
+    transform: scale(1.05);
 }
 
 footer{
@@ -761,6 +764,12 @@ footer #fright a{
 
     footer{
         font-size: .5rem;
+    }
+
+    #submitButton{
+        font-size: .7rem;
+        height: 3em;
+        width: 8rem;
     }
 
 }
