@@ -5,10 +5,10 @@ Spletni obrazec za prijavo na šolsko malico Šolskega centra Nova Gorica.
 
 ## Funkcionalnosti
 
-- Light/dark mode toggle
+- Preklop med svetlim in temnim načinom
 - Sweet alerts
 - Vnosno polje za podpis
-- Cross platform
+- Cross kompatibilnost
 - Avtomatsko polnjenje menija za izbiro oddleka glede na izbiro šole
 
 ## Rabljeni programski jeziki
@@ -17,7 +17,7 @@ Spletni obrazec za prijavo na šolsko malico Šolskega centra Nova Gorica.
 - JavaScript
 - CSS3
 
-## Screenshots
+## SlikeZaslona
 
 ![SiteLight](https://github.com/user-attachments/assets/4f2081b2-cb78-43a3-932e-6a75e03e4fd0)
 ![SiteDark](https://github.com/user-attachments/assets/a7d9e128-b31a-49a5-9f6c-9a7a3f992224)

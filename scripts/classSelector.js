@@ -18,6 +18,13 @@ function check(){
             fill("ne",4 ,5);
             fill("nr",4 ,5);
             break;
+
+            case 2:
+                removeAllChildElements(select2);
+                fill("ir", 1, 2);
+                fill("mr", 1 ,2);
+                break;
+            
         case 3:
             removeAllChildElements(select2);
             fill("gh",1,3);
@@ -95,7 +102,7 @@ function fill(name, start ,count) {
     for (let i = start; i <= count; i++) {
         const option = document.createElement("option");
         option.value = name + i;
-        option.text = i + "." +name.toUpperCase();
+        option.text = i + ". " +name.toUpperCase();
         select2.appendChild(option);
     }
 }

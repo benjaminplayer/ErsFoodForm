@@ -88,7 +88,7 @@ document
 function validate(event) {
     event.preventDefault(); // prepreči submit
     const requiredFields = document.querySelectorAll("#mainFormus [required]");
-    let arr = ["ime vlagatelja", "priimkek vlagatelja", "naslov vlagatelja", "vlogo vlagatelja", " ime dijaka", "priimek dijaka", "emso dijaka", "naslov dijaka"];
+    let arr = ["ime vlagatelja", "priimek vlagatelja", "naslov vlagatelja", "vlogo vlagatelja", " ime dijaka", "priimek dijaka", "emso dijaka", "naslov dijaka"];
     // gre z loopom skozi vsa obvezna polja, ter iz zgornje tabele vstavi ustrezno obliko zapisa v alert
     for (let i = 0; i < arr.length; i++) {
         console.log(requiredFields[i]);

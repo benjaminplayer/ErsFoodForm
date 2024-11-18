@@ -31,11 +31,13 @@ const getTargetPosition = (event) => {
 //fix da ko je darkmode piše z belo
 
 document.addEventListener('DOMContentLoaded', () =>{ //Preveri ali je on page load dark mode in popravi barvo podpisa accordingly
-    if(document.getElementsByTagName("body")[0].classList.contains(darkmode)){
-        ctx.strokeStyle = "black";
+    if(document.getElementsByTagName("body")[0].classList.contains("darkMode")){
+        ctx.strokeStyle = "white";
+            console.log("Darkmode is active");
             redraw();
     } else{
-        ctx.strokeStyle = "white";
+        console.log("Darkmode is not active");
+        ctx.strokeStyle = "black";
         redraw();
     }
 });
